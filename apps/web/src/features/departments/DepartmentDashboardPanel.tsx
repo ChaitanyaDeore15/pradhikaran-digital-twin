@@ -18,6 +18,8 @@ import {
   Info,
   CheckCircle,
   Zap,
+  Navigation,
+  MapPin,
 } from 'lucide-react';
 import { api } from '../../services/api';
 import { Department, Grievance, WorkOrder, DepartmentRoutingRule, ComplaintAuditEntry } from '../../types';
@@ -575,9 +577,11 @@ export const DepartmentDashboardPanel: React.FC<DepartmentDashboardPanelProps> =
                             {onSelectGrievanceOnMap && (
                               <button
                                 onClick={() => onSelectGrievanceOnMap(g)}
-                                className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded text-[11px] font-medium border border-slate-700 transition"
+                                className="px-3 py-1 bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white rounded text-[11px] font-semibold transition flex items-center gap-1.5 shadow-sm border border-rose-400/40"
+                                title="Fly directly to this grievance in 3D Digital Twin"
                               >
-                                View on Map
+                                <Navigation className="w-3.5 h-3.5 text-white animate-pulse" />
+                                <span>Go to Location (3D)</span>
                               </button>
                             )}
 
@@ -661,14 +665,33 @@ export const DepartmentDashboardPanel: React.FC<DepartmentDashboardPanelProps> =
                         </div>
                       </div>
 
-                      {wo.status !== 'COMPLETED' && (
-                        <button
-                          onClick={() => handleCompleteWorkOrder(wo.id)}
-                          className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-medium rounded-lg transition flex items-center gap-1.5"
-                        >
-                          <CheckCircle className="w-3.5 h-3.5" /> Mark Completed
-                        </button>
-                      )}
+                      <div className="flex items-center gap-2">
+                        {wo.grievanceId && onSelectGrievanceOnMap && (
+                          (() => {
+                            const linkedGrv = dashboardData?.grievances?.find((x: Grievance) => x.id === wo.grievanceId);
+                            if (!linkedGrv) return null;
+                            return (
+                              <button
+                                onClick={() => onSelectGrievanceOnMap(linkedGrv)}
+                                className="px-2.5 py-1.5 bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white rounded text-[11px] font-semibold flex items-center gap-1 shadow-sm transition border border-rose-400/40"
+                                title="Fly to work order site"
+                              >
+                                <Navigation className="w-3 h-3 text-white" />
+                                <span>Go to Site (3D)</span>
+                              </button>
+                            );
+                          })()
+                        )}
+
+                        {wo.status !== 'COMPLETED' && (
+                          <button
+                            onClick={() => handleCompleteWorkOrder(wo.id)}
+                            className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-medium rounded-lg transition flex items-center gap-1.5"
+                          >
+                            <CheckCircle className="w-3.5 h-3.5" /> Mark Completed
+                          </button>
+                        )}
+                      </div>
                     </div>
                   ))
                 )}
@@ -791,10 +814,25 @@ export const DepartmentDashboardPanel: React.FC<DepartmentDashboardPanelProps> =
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-slate-900 border border-slate-700 rounded-xl max-w-lg w-full p-5 space-y-4 shadow-2xl max-h-[80vh] flex flex-col">
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-              <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                <FileText className="w-4 h-4 text-cyan-400" />
-                Audit Trail & History: {historyModalGrievance.id}
-              </h3>
+              <div className="flex items-center gap-3">
+                <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-cyan-400" />
+                  Audit Trail & History: {historyModalGrievance.id}
+                </h3>
+                {onSelectGrievanceOnMap && (
+                  <button
+                    onClick={() => {
+                      onSelectGrievanceOnMap(historyModalGrievance);
+                      setHistoryModalGrievance(null);
+                    }}
+                    className="px-2.5 py-1 bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white rounded text-[11px] font-semibold flex items-center gap-1 shadow-sm transition border border-rose-400/40"
+                    title="Jump to 3D Location"
+                  >
+                    <Navigation className="w-3 h-3 text-white" />
+                    <span>Go to Location (3D)</span>
+                  </button>
+                )}
+              </div>
               <button
                 onClick={() => setHistoryModalGrievance(null)}
                 className="text-slate-400 hover:text-white text-xs font-bold"

@@ -81,7 +81,16 @@ export const App: React.FC = () => {
   const [analytics, setAnalytics] = useState<AnalyticsOverview | null>(null);
   const [activeRoute, setActiveRoute] = useState<RouteResult | null>(null);
   const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null);
+  const [selectedGrievance, setSelectedGrievance] = useState<Grievance | null>(null);
+  const [flyToGrievanceTarget, setFlyToGrievanceTarget] = useState<Grievance | null>(null);
   const [graphFocusId, setGraphFocusId] = useState<string>('');
+
+  const handleGoToGrievanceLocation = (g: Grievance) => {
+    setSelectedGrievance(g);
+    setFlyToGrievanceTarget({ ...g });
+    setActiveTab('twin');
+    setSidebarOpen(false);
+  };
 
   // Initial Data Fetch
   const loadData = async () => {
@@ -388,8 +397,20 @@ export const App: React.FC = () => {
             activeRoute={activeRoute}
             selectedAsset={selectedAsset}
             onSelectAsset={handleSelectAsset}
+            selectedGrievance={selectedGrievance}
             onSelectGrievance={g => {
-              setActiveTab('grievances');
+              setSelectedGrievance(g);
+              if (g) {
+                setFlyToGrievanceTarget({ ...g });
+              }
+            }}
+            flyToGrievance={flyToGrievanceTarget}
+            onClearFlyToGrievance={() => {
+              setSelectedGrievance(null);
+              setFlyToGrievanceTarget(null);
+            }}
+            onOpenDepartmentDashboard={() => {
+              setActiveTab('departments');
               setSidebarOpen(true);
             }}
             pickingMode={pickingMode}
@@ -429,15 +450,13 @@ export const App: React.FC = () => {
                 onRefresh={loadData}
                 currentUser={currentUser}
                 onOpenAuthorityLogin={() => setAuthModalOpen(true)}
+                onSelectGrievanceOnMap={handleGoToGrievanceLocation}
               />
             )}
             {activeTab === 'departments' && (
               <DepartmentDashboardPanel
                 currentUser={currentUser}
-                onSelectGrievanceOnMap={g => {
-                  setActiveTab('twin');
-                  setSidebarOpen(false);
-                }}
+                onSelectGrievanceOnMap={handleGoToGrievanceLocation}
                 onRefreshMapGrievances={loadData}
               />
             )}

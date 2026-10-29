@@ -23,12 +23,14 @@ import {
   Cpu,
   BarChart2,
   Activity,
+  Navigation,
 } from 'lucide-react';
 
 interface GrievancePanelProps {
   grievances: Grievance[];
   onRefresh: () => void;
   onSelectGrievance?: (g: Grievance) => void;
+  onSelectGrievanceOnMap?: (g: Grievance) => void;
   currentUser?: User | null;
   onOpenAuthorityLogin?: () => void;
 }
@@ -37,6 +39,7 @@ export const GrievancePanel: React.FC<GrievancePanelProps> = ({
   grievances,
   onRefresh,
   onSelectGrievance,
+  onSelectGrievanceOnMap,
   currentUser,
   onOpenAuthorityLogin,
 }) => {
@@ -484,20 +487,35 @@ export const GrievancePanel: React.FC<GrievancePanelProps> = ({
 
               {/* Authority Timeline & Progress Updates Toggle */}
               <div className="border-t border-slate-700/60 pt-2">
-                <button
-                  type="button"
-                  onClick={e => {
-                    e.stopPropagation();
-                    setExpandedGrievanceId(isExpanded ? null : g.id);
-                  }}
-                  className="w-full flex items-center justify-between text-[11px] font-semibold text-blue-400 hover:text-blue-300 py-1"
-                >
-                  <span className="flex items-center gap-1.5">
+                <div className="flex items-center justify-between gap-2">
+                  <button
+                    type="button"
+                    onClick={e => {
+                      e.stopPropagation();
+                      setExpandedGrievanceId(isExpanded ? null : g.id);
+                    }}
+                    className="flex items-center gap-1.5 text-[11px] font-semibold text-blue-400 hover:text-blue-300 py-1"
+                  >
                     <HardHat className="w-3.5 h-3.5 text-blue-400" />
-                    Authority Updates ({g.updates?.length || 0})
-                  </span>
-                  {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-                </button>
+                    <span>Authority Updates ({g.updates?.length || 0})</span>
+                    {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                  </button>
+
+                  {onSelectGrievanceOnMap && (
+                    <button
+                      type="button"
+                      onClick={e => {
+                        e.stopPropagation();
+                        onSelectGrievanceOnMap(g);
+                      }}
+                      className="px-2.5 py-1 bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white rounded text-[10.5px] font-semibold transition flex items-center gap-1 shadow-sm border border-rose-400/40"
+                      title="Fly directly to this grievance coordinate on the 3D map"
+                    >
+                      <Navigation className="w-3 h-3 text-white" />
+                      <span>Go to Location (3D)</span>
+                    </button>
+                  )}
+                </div>
 
                 {/* Expanded Authority Timeline Drawer */}
                 {isExpanded && (

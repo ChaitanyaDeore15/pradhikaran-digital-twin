@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as Cesium from 'cesium';
 import { Asset, Grievance, RouteResult, StudyArea } from '../../types';
-import { Compass, Layers, ShieldCheck, Eye, EyeOff, ZoomIn, Building2, MapPin } from 'lucide-react';
+import { Compass, Layers, ShieldCheck, Eye, EyeOff, ZoomIn, Building2, MapPin, Navigation, Crosshair, X, ChevronRight } from 'lucide-react';
 
 interface CesiumViewerProps {
   studyArea: StudyArea | null;
@@ -10,7 +10,11 @@ interface CesiumViewerProps {
   activeRoute: RouteResult | null;
   selectedAsset: Asset | null;
   onSelectAsset: (asset: Asset | null) => void;
+  selectedGrievance?: Grievance | null;
   onSelectGrievance?: (grievance: Grievance | null) => void;
+  flyToGrievance?: Grievance | null;
+  onClearFlyToGrievance?: () => void;
+  onOpenDepartmentDashboard?: () => void;
   pickingMode?: 'none' | 'origin' | 'destination';
   originPoint?: { latitude: number; longitude: number; name?: string } | null;
   destPoint?: { latitude: number; longitude: number; name?: string } | null;
@@ -25,7 +29,11 @@ export const CesiumViewer: React.FC<CesiumViewerProps> = ({
   activeRoute,
   selectedAsset,
   onSelectAsset,
+  selectedGrievance,
   onSelectGrievance,
+  flyToGrievance,
+  onClearFlyToGrievance,
+  onOpenDepartmentDashboard,
   pickingMode = 'none',
   originPoint = null,
   destPoint = null,
@@ -58,6 +66,7 @@ export const CesiumViewer: React.FC<CesiumViewerProps> = ({
   const highlightEntitiesRef = useRef<Cesium.Entity[]>([]);
   const buildingLabelEntitiesRef = useRef<Cesium.Entity[]>([]);
   const waypointEntitiesRef = useRef<Cesium.Entity[]>([]);
+  const focusBeaconEntitiesRef = useRef<Cesium.Entity[]>([]);
 
   // 1. Initialize Cesium Viewer
   useEffect(() => {
@@ -570,6 +579,106 @@ export const CesiumViewer: React.FC<CesiumViewerProps> = ({
     }
   }, [originPoint, destPoint]);
 
+  // 9. Camera Flight & High-Visibility Beacon for Selected / Authority-Focused Grievance
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer) return;
+
+    // Clear previous focus entities
+    focusBeaconEntitiesRef.current.forEach(e => viewer.entities.remove(e));
+    focusBeaconEntitiesRef.current = [];
+
+    const target = flyToGrievance || selectedGrievance;
+    if (!target) return;
+
+    const lon = target.longitude;
+    const lat = target.latitude;
+
+    // Smooth camera swoop down to the grievance coordinates in tilted 3D view
+    viewer.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(lon, lat - 0.0022, 780),
+      orientation: {
+        heading: Cesium.Math.toRadians(0),
+        pitch: Cesium.Math.toRadians(-38),
+        roll: 0.0,
+      },
+      duration: 1.5,
+    });
+
+    // 1. Ground Glowing Pulsing Radar Ring
+    const radarRing = viewer.entities.add({
+      name: `Active Focus Radar: ${target.category}`,
+      position: Cesium.Cartesian3.fromDegrees(lon, lat),
+      ellipse: {
+        semiMinorAxis: 28,
+        semiMajorAxis: 28,
+        material: Cesium.Color.fromCssColorString('#f43f5e').withAlpha(0.35),
+        outline: true,
+        outlineColor: Cesium.Color.fromCssColorString('#fda4af'),
+        outlineWidth: 3,
+        heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+      },
+    });
+    focusBeaconEntitiesRef.current.push(radarRing);
+
+    // 2. High-Visibility Ground Ring (Outer Aura)
+    const outerAura = viewer.entities.add({
+      name: `Active Focus Aura: ${target.category}`,
+      position: Cesium.Cartesian3.fromDegrees(lon, lat),
+      ellipse: {
+        semiMinorAxis: 55,
+        semiMajorAxis: 55,
+        material: Cesium.Color.fromCssColorString('#fb7185').withAlpha(0.15),
+        outline: true,
+        outlineColor: Cesium.Color.fromCssColorString('#f43f5e').withAlpha(0.7),
+        outlineWidth: 2,
+        heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+      },
+    });
+    focusBeaconEntitiesRef.current.push(outerAura);
+
+    // 3. Glowing Vertical Light Beam clamped to point
+    const beam = viewer.entities.add({
+      name: `Active Focus Beam: ${target.category}`,
+      position: Cesium.Cartesian3.fromDegrees(lon, lat, 25),
+      cylinder: {
+        length: 50,
+        topRadius: 1.5,
+        bottomRadius: 6,
+        material: Cesium.Color.fromCssColorString('#f43f5e').withAlpha(0.65),
+      },
+    });
+    focusBeaconEntitiesRef.current.push(beam);
+
+    // 4. Floating 3D Target Marker with Category & Severity
+    const floatingTag = viewer.entities.add({
+      name: `Active Focus Tag: ${target.category}`,
+      position: Cesium.Cartesian3.fromDegrees(lon, lat, 55),
+      point: {
+        pixelSize: 16,
+        color: Cesium.Color.fromCssColorString('#e11d48'),
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 3,
+        disableDepthTestDistance: Number.POSITIVE_INFINITY,
+      },
+      label: {
+        text: `📍 [${target.severity}] ${target.category.toUpperCase()}\n${target.id}`,
+        font: 'bold 12px sans-serif',
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        fillColor: Cesium.Color.WHITE,
+        outlineColor: Cesium.Color.BLACK,
+        outlineWidth: 3,
+        showBackground: true,
+        backgroundColor: Cesium.Color.fromCssColorString('#881337').withAlpha(0.92),
+        backgroundPadding: new Cesium.Cartesian2(8, 6),
+        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+        pixelOffset: new Cesium.Cartesian2(0, -18),
+        disableDepthTestDistance: Number.POSITIVE_INFINITY,
+      },
+    });
+    focusBeaconEntitiesRef.current.push(floatingTag);
+  }, [flyToGrievance]);
+
   // Camera Presets (Calibrated for Pune ~580m Ground Elevation)
   const flyToPreset = (type: 'pccoe' | 'spine' | 'overview') => {
     const viewer = viewerRef.current;
@@ -761,6 +870,103 @@ export const CesiumViewer: React.FC<CesiumViewerProps> = ({
               Cancel
             </button>
           )}
+        </div>
+      )}
+
+      {/* Authority Grievance Field Location Inspection HUD Card */}
+      {selectedGrievance && (
+        <div className="absolute bottom-6 right-6 z-20 max-w-sm w-full bg-slate-900/95 backdrop-blur-md border border-rose-500/60 rounded-xl p-4 shadow-2xl text-xs flex flex-col gap-2.5 animate-in fade-in slide-in-from-bottom-4 duration-300">
+          <div className="flex items-start justify-between border-b border-slate-800 pb-2.5">
+            <div className="flex items-center gap-2">
+              <span className="p-1.5 rounded-lg bg-rose-500/20 text-rose-400 border border-rose-500/30">
+                <Navigation className="w-4 h-4" />
+              </span>
+              <div>
+                <div className="flex items-center gap-1.5">
+                  <span className="font-bold text-white uppercase text-[11px] tracking-wide">
+                    {selectedGrievance.category}
+                  </span>
+                  <span
+                    className={`px-1.5 py-0.2 rounded text-[9px] font-bold ${
+                      selectedGrievance.severity === 'HAZARDOUS' || selectedGrievance.severity === 'SEVERE'
+                        ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
+                        : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                    }`}
+                  >
+                    {selectedGrievance.severity}
+                  </span>
+                </div>
+                <div className="text-[10px] text-slate-400 font-mono">
+                  Ticket #{selectedGrievance.id}
+                </div>
+              </div>
+            </div>
+
+            <button
+              onClick={() => {
+                if (onClearFlyToGrievance) onClearFlyToGrievance();
+              }}
+              className="text-slate-400 hover:text-white p-1 rounded-md hover:bg-slate-800 transition"
+              title="Close focus card"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          <p className="text-slate-300 text-[11px] line-clamp-3 leading-relaxed">
+            {selectedGrievance.description}
+          </p>
+
+          <div className="grid grid-cols-2 gap-2 text-[10px] bg-slate-950/70 p-2 rounded-lg border border-slate-800/80">
+            <div>
+              <span className="text-slate-400">Coordinates:</span>
+              <div className="font-mono text-cyan-300 truncate">
+                {selectedGrievance.latitude.toFixed(5)}°N, {selectedGrievance.longitude.toFixed(5)}°E
+              </div>
+            </div>
+            <div>
+              <span className="text-slate-400">Department:</span>
+              <div className="font-semibold text-slate-200 truncate">
+                {selectedGrievance.assignedDepartmentId || 'Roads & Infrastructure'}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between gap-2 pt-1 border-t border-slate-800/80">
+            <button
+              onClick={() => {
+                const viewer = viewerRef.current;
+                if (!viewer) return;
+                viewer.camera.flyTo({
+                  destination: Cesium.Cartesian3.fromDegrees(
+                    selectedGrievance.longitude,
+                    selectedGrievance.latitude - 0.0022,
+                    780
+                  ),
+                  orientation: {
+                    heading: Cesium.Math.toRadians(0),
+                    pitch: Cesium.Math.toRadians(-38),
+                    roll: 0.0,
+                  },
+                  duration: 1.2,
+                });
+              }}
+              className="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-[11px] font-medium flex items-center gap-1.5 transition border border-slate-700"
+            >
+              <Crosshair className="w-3.5 h-3.5 text-rose-400" />
+              <span>Re-center 3D</span>
+            </button>
+
+            {onOpenDepartmentDashboard && (
+              <button
+                onClick={onOpenDepartmentDashboard}
+                className="px-3 py-1.5 bg-rose-600 hover:bg-rose-500 text-white rounded-lg text-[11px] font-semibold flex items-center gap-1.5 transition shadow-sm"
+              >
+                <span>Department Dispatch</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
         </div>
       )}
     </div>
