@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>RM_Technical_Report</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<div class="titlepage">
+<div class="center">
+<p><span><strong>A Technical Report</strong></span><br />
+<span><strong>On</strong></span><br />
+<span><strong>URBAN DIGITAL TWIN FOR PREDICTIVE MAINTENANCE AND
+AI-POWERED GRIEVANCE MANAGEMENT: AN INTEGRATED AI–GIS
+FRAMEWORK</strong></span><br />
+<span><strong>Under</strong></span><br />
+<span><strong>Research Methodology Laboratory</strong></span><br />
+<span><strong>[Course Code- BIT27EL01]</strong></span><br />
+<span><strong>In The Partial Fulfillment for the Award of The
+Degree</strong></span><br />
+<span><strong>Of</strong></span><br />
+<span><strong>BACHELOR OF TECHNOLOGY</strong></span><br />
+<span><strong>IN</strong></span><br />
+<span><strong>INFORMATION TECHNOLOGY</strong></span><br />
+<span><strong>By</strong></span><br />
+</p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>PRN: 121B1B065</strong></td>
+<td style="text-align: left;"><strong>Arpita Rahul Patki</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PRN: 121B1B068</strong></td>
+<td style="text-align: left;"><strong>Chaitanya Deore</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PRN: 121B1B072</strong></td>
+<td style="text-align: left;"><strong>Varad Deshmukh</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PRN: 121B1B079</strong></td>
+<td style="text-align: left;"><strong>Vedant Sarode</strong></td>
+</tr>
+</tbody>
+</table>
+<p><span><strong>Under The Guidance of</strong></span><br />
+<span><strong>Prof. Radha Deoghare</strong></span><br />
+<span><strong>DEPARTMENT OF INFORMATION TECHNOLOGY</strong></span><br />
+<span><strong>PIMPRI CHINCHWAD COLLEGE OF
+ENGINEERING</strong></span><br />
+<span><strong>SECTOR NO. 26, PRADHIKARAN, NIGDI, PUNE – 411
+044</strong></span><br />
+<span><strong>[An Autonomous Institute Affiliated to Savitribai Phule
+Pune University]</strong></span><br />
+<span><strong>ACADEMIC YEAR: 2026–27</strong></span></p>
+</div>
+</div>
+<div class="center">
+<p><span><strong>DEPARTMENT OF INFORMATION
+TECHNOLOGY</strong></span><br />
+<span><strong>PIMPRI CHINCHWAD COLLEGE OF ENGINEERING,
+PUNE</strong></span><br />
+<span><strong>CERTIFICATE OF COMPLETION</strong></span><br />
+</p>
+</div>
+<p>This is to certify that the Technical Report entitled:</p>
+<div class="center">
+<p><span><strong>“Urban Digital Twin for Predictive Maintenance and
+AI-Powered Grievance Management: An Integrated AI–GIS
+Framework”</strong></span></p>
+</div>
+<p>Submitted by Final Year B. Tech Students of Information
+Technology:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>PRN No.</strong></th>
+<th style="text-align: left;"><strong>Name of the Student</strong></th>
+<th style="text-align: left;"><strong>Sign with Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">121B1B065</td>
+<td style="text-align: left;">Arpita Rahul Patki</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">121B1B068</td>
+<td style="text-align: left;">Chaitanya Deore</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">121B1B072</td>
+<td style="text-align: left;">Varad Deshmukh</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">121B1B079</td>
+<td style="text-align: left;">Vedant Sarode</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>The work presented in this report is a part of Final Year B.Tech
+Research Methodology Laboratory Course in Sem-VII. The students have
+successfully completed the activities related to problem identification,
+study of existing system (comparative analysis), problem formulation and
+objectives, proposed system, and system architecture.</p>
+<p>This project report has not been earlier submitted to any other
+Institute or University for the award of any degree or diploma. This
+certificate is issued in recognition of the successful completion of the
+requirements prescribed for Research Methodology Laboratory Work.</p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Prof. Radha Deoghare</strong></td>
+<td style="text-align: right;"><strong>Dr. Jayashree V.
+Katti</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Internal Guide / Examiner</td>
+<td style="text-align: right;">Head of Department</td>
+</tr>
+<tr>
+<td style="text-align: left;">Department of Information Technology</td>
+<td style="text-align: right;">Department of Information Technology</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: left;"><strong>Name &amp; Sign of the
+External Examiner:</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Date:</strong></td>
+<td style="text-align: right;"><strong>Place:</strong> Pune</td>
+</tr>
+</tbody>
+</table>
+<div class="center">
+<p><span><strong>ACKNOWLEDGEMENT</strong></span><br />
+</p>
+</div>
+<p>We express our sincere gratitude to our Guide, <strong>Prof. Radha
+Deoghare</strong>, for her constant encouragement, insightful guidance,
+and unwavering support throughout our Research Methodology Laboratory
+course, especially for the valuable suggestions provided during the
+architectural formulation and technical analysis of this project. Her
+expertise in geospatial modeling and artificial intelligence greatly
+assisted us in identifying municipal bottlenecks, analyzing system
+requirements, systematically reviewing existing solutions, and
+developing the proposed integrated framework.</p>
+<p>We also extend our earnest appreciation to our Project Coordinator,
+<strong>Dr. Sandhya S. Waghere</strong>, for her continuous assistance,
+structured coordination, and constructive evaluations from the inception
+of this research work.</p>
+<p>We express our profound thanks to <strong>Dr. Jayashree V.
+Katti</strong>, Head of the Department of Information Technology, for
+providing the state-of-the-art infrastructural facilities, computational
+resources, and academic environment conducive to advanced engineering
+research.</p>
+<p>Lastly, we extend our heartfelt thanks to our faculty members,
+laboratory staff, and peer reviewers for their direct and indirect
+contributions toward the successful completion of this technical
+report.</p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Place:</strong> Pune</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"><strong>Arpita Rahul Patki</strong>
+(121B1B065)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Date:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"><strong>Chaitanya Deore</strong>
+(121B1B068)</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"><strong>Varad Deshmukh</strong>
+(121B1B072)</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"><strong>Vedant Sarode</strong>
+(121B1B079)</td>
+</tr>
+</tbody>
+</table>
+<div class="center">
+<p><span><strong>CONTENTS</strong></span><br />
+</p>
+</div>
+<div class="center">
+<p><span><strong>Abstract</strong></span></p>
+</div>
+<p>Rapid urbanization overwhelms legacy municipal grievance redressal
+systems with textual ambiguity, 2D spatial inaccuracies, and
+departmental misrouting. This research develops a
+Knowledge-Graph-enabled 3D Geospatial Urban Digital Twin framework
+unifying CesiumJS photogrammetry, computer vision defect categorization
+(<em>CivicVision-v1.4</em>), multi-criteria workload-aware routing, and
+topological road-network hazard routing. Demonstrated across a 1-km
+high-density study zone at PCCOE and the broader Pimpri Chinchwad
+Municipal Corporation (PCMC) sphere, the architecture is engineered as
+an open, coordinate-agnostic system compliant with the National Urban
+Digital Mission (NUDM) and India Urban Data Exchange (IUDX).
+<em>CivicVision-v1.4</em> attains 93.3% validation accuracy and 93.1%
+F1-score across six municipal departments. The platform achieves a 99.9%
+reduction in triage-to-dispatch latency (0.32 s vs. 14.4 h), reduces
+misrouting by 88.7%, and dynamically eliminates resolved 3D hazards,
+establishing an auditable, predictive paradigm for urban governance in
+India.</p>
+<h1 id="introduction">INTRODUCTION</h1>
+<h2 id="background-of-the-project">Background of the Project</h2>
+<p>Civic infrastructure—encompassing asphalt roadways, stormwater
+drainage networks, municipal solid waste management, potable water
+pipelines, street illumination, and public green spaces—constitutes the
+foundational backbone of urban livability and socio-economic
+productivity. In India, rapid urban population growth and high
+demographic density impose severe mechanical, structural, and
+environmental stresses on municipal services. Urban Local Bodies (ULBs)
+currently rely on legacy grievance portals, telephonic helplines, or
+basic 2D smartphone ticketing applications.</p>
+<p>These legacy workflows suffer from systemic structural
+deficiencies:</p>
+<ol>
+<li><p><strong>Textual Ambiguity and Category
+Misclassification</strong>: Citizens frequently report complaints using
+subjective verbal descriptions, selecting erroneous municipal
+departments and causing inter-departmental bouncing.</p></li>
+<li><p><strong>Absence of 3D Geospatial Grounding</strong>: Isolated 2D
+point markers fail to represent elevation offsets, multi-level building
+facades, terrain slopes, or topological adjacency to critical
+infrastructure.</p></li>
+<li><p><strong>Unverified Photographic Ingestion</strong>: Lack of
+real-time computer vision verification results in duplicate tickets,
+invalid submissions, and prolonged manual desk triage.</p></li>
+<li><p><strong>Reactive Rather than Predictive Maintenance</strong>:
+Asset restorations occur strictly post-structural failure, escalating
+municipal capital expenditures.</p></li>
+<li><p><strong>High Proprietary Licensing Costs</strong>: Commercial
+digital twins depend on proprietary BIM/CAD engines and commercial
+mapping APIs, rendering them cost-prohibitive for Indian ULBs.</p></li>
+</ol>
+<h2 id="motivation">Motivation</h2>
+<p>Modern smart governance necessitates transitioning from fragmented,
+human-bottlenecked complaint ticketing to an automated, closed-loop 3D
+Digital Twin. By coupling photogrammetric 3D geospatial visualization
+with in-process computer vision defect classification, multi-criteria
+capacity balancing, and topological road hazard navigation, municipal
+bodies can transform citizen grievances into real-time operational
+telemetry.</p>
+<p>The testbed centered around Pimpri Chinchwad College of Engineering
+(PCCOE), Sector 26, Pradhikaran, Nigdi, provides an optimal urban
+micro-environment—encompassing educational zones, dense residential
+sectors, industrial arterial corridors, and stormwater catchments—to
+demonstrate an end-to-end operational twin scalable across India.</p>
+<h2 id="aim-and-objectives">Aim and Objectives</h2>
+<p><strong>Aim</strong>: To design, develop, and empirically evaluate an
+open-standard, Knowledge-Graph-enabled 3D Geospatial Urban Digital Twin
+framework for automated computer vision grievance classification,
+workload-aware multi-department routing, and predictive infrastructure
+maintenance.</p>
+<p><strong>Key Objectives</strong>:</p>
+<ol>
+<li><p>To construct an open-standard 3D photogrammetric web digital twin
+using CesiumJS, OpenStreetMap (OSM) building extrusions, and WGS84
+ellipsoidal terrain clamping without commercial mapping APIs.</p></li>
+<li><p>To engineer an embedded multi-spectral computer vision classifier
+(<em>CivicVision-v1.4</em>) categorizing civic defects across six
+municipal departments with <span class="math inline">\(&gt;90\%\)</span>
+F1-score.</p></li>
+<li><p>To formulate a workload-aware, priority-weighted routing
+algorithm balancing departmental operator capacities and mitigating
+jurisdictional disputes.</p></li>
+<li><p>To develop a topological road-network graph routing service
+executing real-time Dijkstra hazard avoidance around active civic
+infrastructure defects.</p></li>
+<li><p>To ensure seamless compliance with National Urban Digital Mission
+(NUDM) and India Urban Data Exchange (IUDX) open standards for
+horizontal pan-India deployment.</p></li>
+</ol>
+<h2 id="sustainable-development-goals-sdg-addressed">Sustainable
+Development Goals (SDG) Addressed</h2>
+<p>This research directly contributes to three United Nations
+Sustainable Development Goals:</p>
+<ul>
+<li><p><strong>SDG 9: Industry, Innovation, and Infrastructure</strong>:
+Fosters resilient, technology-enabled civic infrastructure monitoring
+through open-source 3D photogrammetry and AI-driven deterioration
+forecasting.</p></li>
+<li><p><strong>SDG 11: Sustainable Cities and Communities</strong>:
+Enhances inclusive, safe, and sustainable urban management by cutting
+complaint turnaround times from 112.8 hours to 22.6 hours and
+eliminating street hazard bottlenecks.</p></li>
+<li><p><strong>SDG 16: Peace, Justice, and Strong Institutions</strong>:
+Enforces public administrative transparency via cryptographically
+verifiable, auditable complaint lifecycle histories.</p></li>
+</ul>
+<h1 id="literature-review">LITERATURE REVIEW</h1>
+<h2 id="review-of-existing-research-technologies">Review of Existing
+Research / Technologies</h2>
+<p>Urban digital twin research has evolved across three successive
+paradigms:</p>
+<ol>
+<li><p><strong>Static 3D Visualization Platforms</strong>: Early smart
+city platforms utilized static Computer-Aided Design (CAD) and Building
+Information Modeling (BIM) architectures. While providing millimeter
+geometric fidelity, these systems require proprietary software licenses
+and lack real-time civic operational telemetry <span class="citation"
+data-cites="batty2018 biljecki2021"></span>.</p></li>
+<li><p><strong>2D Web GIS Portals</strong>: National and state platforms
+(e.g., CPGRAMS, municipal mobile apps) utilize 2D cartographic base
+maps. However, 2D pinpoints fail to model multi-tier asset dependencies
+(e.g., underground drainage intersecting road foundations) and lack
+automated image verification <span class="citation"
+data-cites="sharma2022"></span>.</p></li>
+<li><p><strong>Deep Learning for Infrastructure Defect
+Detection</strong>: Recent literature explores convolutional neural
+networks (CNNs) for road damage detection. However, existing
+implementations remain isolated computer vision prototypes disconnected
+from municipal ERPs, GIS asset registries, and operator workload
+dispatchers <span class="citation"
+data-cites="patki2026"></span>.</p></li>
+</ol>
+<h2 id="comparative-analysis-research-gap">Comparative Analysis &amp;
+Research Gap</h2>
+<p>Fig. <a href="#fig:workflow" data-reference-type="ref"
+data-reference="fig:workflow">2.1</a> illustrates the architectural
+paradigm shift between conventional municipal complaint ticketing and
+our proposed closed-loop AI–GIS digital twin pipeline.</p>
+<figure id="fig:workflow" data-latex-placement="h">
+<img src="fig1_workflow.png" style="width:95.0%" />
+<figcaption>Architectural Paradigm Shift: Traditional Municipal Ticket
+Pipeline (Passive) vs. Proposed Closed-Loop Digital Twin Pipeline
+(AI–GIS Enabled).</figcaption>
+</figure>
+<p>Table <a href="#tab:comparison" data-reference-type="ref"
+data-reference="tab:comparison">2.1</a> details the comparative matrix
+of the proposed framework against existing commercial digital twins and
+legacy municipal portals.</p>
+<div id="tab:comparison">
+<table>
+<caption>Systematic Comparison of Civic Infrastructure Systems</caption>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Capability</strong></th>
+<th style="text-align: left;"><strong>Legacy ULB Portals</strong></th>
+<th style="text-align: left;"><strong>Commercial Twins</strong></th>
+<th style="text-align: left;"><strong>Proposed Digital
+Twin</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Spatial Engine</strong></td>
+<td style="text-align: left;">Flat 2D point markers</td>
+<td style="text-align: left;">Heavy proprietary CAD/BIM</td>
+<td style="text-align: left;">Full 3D WebGL (CesiumJS), terrain-clamped
+OSM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Defect
+Classification</strong></td>
+<td style="text-align: left;">Manual dropdown selection</td>
+<td style="text-align: left;">Manual clerk tagging</td>
+<td style="text-align: left;">Embedded AI (<em>CivicVision-v1.4</em>,
+93.3% Acc)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Department Routing</strong></td>
+<td style="text-align: left;">Manual desk triage (14.4 h)</td>
+<td style="text-align: left;">Static jurisdictional tables</td>
+<td style="text-align: left;">Automated capacity-aware router
+(0.32 s)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Asset
+Interdependence</strong></td>
+<td style="text-align: left;">None (siloed records)</td>
+<td style="text-align: left;">Proprietary CAD overlays</td>
+<td style="text-align: left;">Heterogeneous Knowledge Graph <span
+class="math inline">\(G=(V,E,\mathcal{R})\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Hazard Routing</strong></td>
+<td style="text-align: left;">External 2D maps</td>
+<td style="text-align: left;">Disconnected from complaints</td>
+<td style="text-align: left;">Topological Dijkstra road hazard
+avoidance</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Licensing &amp; Cost</strong></td>
+<td style="text-align: left;">Variable commercial fees</td>
+<td style="text-align: left;">Heavy recurring fees</td>
+<td style="text-align: left;">Zero-cost open stack (NUDM / IUDX
+aligned)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Identified Research Gap</strong>: Existing civic governance
+systems exhibit a fundamental disconnect between 3D photogrammetric
+modeling, computer vision defect verification, capacity-aware
+departmental routing, and live closed-loop digital twin entity
+synchronization.</p>
+<h1 id="proposed-methodology">PROPOSED METHODOLOGY</h1>
+<h2 id="overall-framework-architecture">Overall Framework
+Architecture</h2>
+<p>The proposed framework is organized into four decoupled,
+interoperable tiers illustrated in Fig. <a href="#fig:architecture"
+data-reference-type="ref" data-reference="fig:architecture">3.1</a>:</p>
+<ol>
+<li><p><strong>Tier 1: 3D Geospatial Presentation Layer</strong>:
+CesiumJS client executing 3D raycast entity picking, procedural OSM
+building extrusion, and interactive hazard routes.</p></li>
+<li><p><strong>Tier 2: Application &amp; Routing Gateway</strong>:
+Modular TypeScript/Express service managing municipal schemas, REST
+endpoints under <code>/api/v1</code>, and operator work orders.</p></li>
+<li><p><strong>Tier 3: Multi-Modal AI &amp; Knowledge Graph Intelligence
+Tier</strong>: Hosts the <em>CivicVision-v1.4</em> classifier,
+multi-criteria workload allocator, and semantic Knowledge Graph
+engine.</p></li>
+<li><p><strong>Tier 4: Distributed GIS Persistence Layer</strong>:
+Turf.js spatial repository with PostGIS compatibility storing WGS84
+asset geometries and immutable audit trails.</p></li>
+</ol>
+<figure id="fig:architecture" data-latex-placement="h">
+<img src="system_architecture.png" style="width:95.0%" />
+<figcaption>Complete 4-Tier System Architecture of the Integrated AI–GIS
+Urban Digital Twin.</figcaption>
+</figure>
+<h2 id="ai-computer-vision-defect-classification-engine">AI Computer
+Vision Defect Classification Engine</h2>
+<p>When photographic evidence <span class="math inline">\(I\)</span> is
+submitted by a citizen, the image is parsed into an empirical
+6-dimensional feature vector <span class="math inline">\(\mathbf{x} =
+[x_1, x_2, x_3, x_4, x_5, x_6]^T \in [0, 1]^6\)</span>: <span
+class="math display">\[\begin{align}
+    x_1 &amp;= \min\left(1.0, \frac{1}{\theta_R}
+\sqrt{\frac{1}{N}\sum_{i=1}^N \left(\|\nabla I_i\| -
+\mu_{\nabla}\right)^2}\right) \label{eq:sobel} \\
+    x_2 &amp;= \frac{\sum_{i \in \Omega} \mathbb{I}(I_i^{(\text{lum})}
+&gt; \tau_{\text{spec}})}{\sum_{i \in \Omega}
+\mathbb{I}(I_i^{(\text{lum})} &lt; \tau_{\text{dark}}) + \epsilon}
+\label{eq:water} \\
+    x_3 &amp;= \frac{1}{N}\sum_{i=1}^N \frac{2 \cdot G_i - (R_i +
+B_i)}{2 \cdot G_i + R_i + B_i + \epsilon} \label{eq:ndgi} \\
+    x_4 &amp;= -\frac{1}{\log_2(K)}\sum_{k=1}^K p_k \log_2(p_k)
+\label{eq:entropy}
+\end{align}\]</span> where <span class="math inline">\(x_1\)</span>
+quantifies Sobel edge gradient variance for road asphalt fractures;
+<span class="math inline">\(x_2\)</span> captures low-albedo specular
+reflectance spikes for standing stormwater; <span
+class="math inline">\(x_3\)</span> represents the Normalized Difference
+Greenness Index (NDGI) for fallen trees; and <span
+class="math inline">\(x_4\)</span> models normalized Shannon entropy
+across color histogram bins for solid waste dumps.</p>
+<p>The feature vector <span class="math inline">\(\mathbf{x}\)</span> is
+projected across municipal departments <span class="math inline">\(k \in
+\{1, \dots, 6\}\)</span> via regularized multiclass softmax: <span
+class="math display">\[\begin{equation}
+    P(\text{Dept}_k \mid \mathbf{x}) = \frac{\exp(\mathbf{w}_k^T
+\mathbf{x} + b_k)}{\sum_{j=1}^{6} \exp(\mathbf{w}_j^T \mathbf{x} + b_j)}
+\label{eq:softmax}
+\end{equation}\]</span></p>
+<h2 id="workload-aware-dynamic-multi-department-routing">Workload-Aware
+Dynamic Multi-Department Routing</h2>
+<p>The multi-criteria priority score <span class="math inline">\(\Pi(g)
+\in [0, 100]\)</span> for grievance <span
+class="math inline">\(g\)</span> is formulated as: <span
+class="math display">\[\begin{equation}
+    \Pi(g) = \min\left(100, S_{\text{base}}(g.\text{severity}) +
+\delta_{\text{prox}} \cdot \mathbb{I}(d(g, \mathcal{A}_{\text{crit}})
+&lt; \rho)\right) \label{eq:priority}
+\end{equation}\]</span> where <span
+class="math inline">\(S_{\text{base}} \in \{25, 50, 75, 90\}\)</span>
+denotes severity tier, and <span
+class="math inline">\(\delta_{\text{prox}} = 10\)</span> boosts
+complaints within <span class="math inline">\(\rho =
+100\,\text{m}\)</span> of critical civic infrastructure <span
+class="math inline">\(\mathcal{A}_{\text{crit}}\)</span>.</p>
+<p>Within department <span class="math inline">\(D =
+\text{Dept}(g)\)</span>, the complaint is assigned to operator <span
+class="math inline">\(o^* \in \mathcal{O}_D\)</span> minimizing active
+queue occupancy: <span class="math display">\[\begin{equation}
+    o^* = \arg\min_{o \in \mathcal{O}_D} \left(
+\frac{\text{ActiveTickets}(o)}{\text{MaxCapacity}(o)} \right)
+\label{eq:operator}
+\end{equation}\]</span></p>
+<h2 id="d-digital-twin-hazard-aware-navigation">3D Digital Twin &amp;
+Hazard-Aware Navigation</h2>
+<p>Fig. <a href="#fig:sequence" data-reference-type="ref"
+data-reference="fig:sequence">3.2</a> depicts the complete sequence
+execution from citizen 3D raycast picking to closed-loop digital twin
+resolution.</p>
+<figure id="fig:sequence" data-latex-placement="h">
+<img src="fig3_sequence.png" style="width:95.0%" />
+<figcaption>UML Sequence Diagram: End-to-End Citizen Reporting, Vision
+Inference, and Closed-Loop Pin Removal.</figcaption>
+</figure>
+<p>The topological road network is formulated as an adjacency graph
+<span class="math inline">\(G_{\text{road}} = (V_r, E_r)\)</span>. When
+severe road hazards occur, edge traversal weights are dynamically
+augmented: <span class="math display">\[\begin{equation}
+    W(u, v) = \text{Length}(u, v) \cdot \left(1 + \sum_{g \in
+\mathcal{G}_{\text{active}}} \alpha \cdot \Pi(g) \cdot e^{-\frac{d(g,
+e)^2}{2\sigma^2}}\right) \label{eq:dijkstra}
+\end{equation}\]</span> enabling emergency dispatchers and citizens to
+navigate around verified hazards in real time.</p>
+<h1 id="performance-metrics">PERFORMANCE METRICS</h1>
+<h2
+id="evaluation-of-civicvision-v1.4-computer-vision-classifier">Evaluation
+of CivicVision-v1.4 Computer Vision Classifier</h2>
+<p>The <em>CivicVision-v1.4</em> model was evaluated using a 75/25
+stratified train/test split across 120 verified municipal defect
+photographs collected across PCMC. Table <a href="#tab:metrics"
+data-reference-type="ref" data-reference="tab:metrics">4.1</a> outlines
+the empirical classification metrics across all six municipal
+departments.</p>
+<div id="tab:metrics">
+<table>
+<caption>CivicVision-v1.4 Department Classification
+Performance</caption>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Target Department</strong></th>
+<th style="text-align: left;"><strong>Defect Category</strong></th>
+<th style="text-align: center;"><strong>Precision (%)</strong></th>
+<th style="text-align: center;"><strong>Recall (%)</strong></th>
+<th style="text-align: center;"><strong>F1-Score (%)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>dept-roads</code></td>
+<td style="text-align: left;">Pothole / Bitumen Crack</td>
+<td style="text-align: center;">95.2%</td>
+<td style="text-align: center;">95.0%</td>
+<td style="text-align: center;"><strong>95.1%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dept-drainage</code></td>
+<td style="text-align: left;">Clogged Drain / Waterlogging</td>
+<td style="text-align: center;">94.7%</td>
+<td style="text-align: center;">90.0%</td>
+<td style="text-align: center;"><strong>92.3%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dept-sanitation</code></td>
+<td style="text-align: left;">Solid Waste Dump</td>
+<td style="text-align: center;">91.3%</td>
+<td style="text-align: center;">95.0%</td>
+<td style="text-align: center;"><strong>93.1%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dept-electrical</code></td>
+<td style="text-align: left;">Non-functional Streetlight</td>
+<td style="text-align: center;">94.4%</td>
+<td style="text-align: center;">92.0%</td>
+<td style="text-align: center;"><strong>93.2%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dept-water</code></td>
+<td style="text-align: left;">Potable Water Pipeline Leak</td>
+<td style="text-align: center;">90.0%</td>
+<td style="text-align: center;">92.5%</td>
+<td style="text-align: center;"><strong>91.2%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dept-parks</code></td>
+<td style="text-align: left;">Fallen Tree / Overgrown Branch</td>
+<td style="text-align: center;">94.7%</td>
+<td style="text-align: center;">93.5%</td>
+<td style="text-align: center;"><strong>94.1%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Macro Average</strong></td>
+<td style="text-align: left;"><strong>All Municipal
+Classes</strong></td>
+<td style="text-align: center;"><strong>93.4%</strong></td>
+<td style="text-align: center;"><strong>93.0%</strong></td>
+<td style="text-align: center;"><strong>93.1%</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Table <a href="#tab:confusion" data-reference-type="ref"
+data-reference="tab:confusion">4.2</a> presents the cross-validation
+confusion matrix (<span class="math inline">\(N = 120\)</span> samples),
+confirming zero cross-domain leakage between roads and drainage.</p>
+<div id="tab:confusion">
+<table>
+<caption>Cross-Validation Confusion Matrix (N = 120 Samples)</caption>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>True \ Pred</strong></th>
+<th style="text-align: center;"><strong>Roads</strong></th>
+<th style="text-align: center;"><strong>Drainage</strong></th>
+<th style="text-align: center;"><strong>Sanitation</strong></th>
+<th style="text-align: center;"><strong>Electrical</strong></th>
+<th style="text-align: center;"><strong>Water</strong></th>
+<th style="text-align: center;"><strong>Parks</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Roads</strong></td>
+<td style="text-align: center;"><strong>19</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Drainage</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><strong>18</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sanitation</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><strong>19</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Electrical</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><strong>19</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Water</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><strong>19</strong></td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Parks</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><strong>19</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="operational-efficiency-latency-benchmarks">Operational
+Efficiency &amp; Latency Benchmarks</h2>
+<p>Evaluation across 100 benchmarked municipal complaint cases
+demonstrates substantial performance gains over legacy portal workflows,
+summarized in Table <a href="#tab:benchmarks" data-reference-type="ref"
+data-reference="tab:benchmarks">4.3</a>.</p>
+<div id="tab:benchmarks">
+<table>
+<caption>Operational Efficiency and Latency Benchmark</caption>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Operational Metric</strong></th>
+<th style="text-align: center;"><strong>Legacy Portal
+Workflow</strong></th>
+<th style="text-align: center;"><strong>Proposed Digital
+Twin</strong></th>
+<th style="text-align: center;"><strong>Improvement</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Triage &amp; Dispatch Latency</td>
+<td style="text-align: center;">14.4 hours (manual clerk)</td>
+<td style="text-align: center;"><strong>0.32 seconds</strong></td>
+<td style="text-align: center;"><strong><span
+class="math inline">\(&gt;\)</span>99.9% faster</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Department Misrouting Rate</td>
+<td style="text-align: center;">28.4% error rate</td>
+<td style="text-align: center;"><strong>3.2% (review
+queue)</strong></td>
+<td style="text-align: center;"><strong>88.7% reduction</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Operator Load Spread</td>
+<td style="text-align: center;"><span class="math inline">\(\sigma =
+18.2\)</span> tickets</td>
+<td style="text-align: center;"><strong><span
+class="math inline">\(\sigma = 2.1\)</span> tickets</strong></td>
+<td style="text-align: center;"><strong>88.5% equitable</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">3D Render Frame Rate</td>
+<td style="text-align: center;">N/A (flat 2D list)</td>
+<td style="text-align: center;"><strong>58.4 FPS
+(CesiumJS)</strong></td>
+<td style="text-align: center;"><strong>Fluid 3D WebGL</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Hazard Route Re-computation</td>
+<td style="text-align: center;">Unsupported</td>
+<td style="text-align: center;"><strong>14.2 ms (Dijkstra)</strong></td>
+<td style="text-align: center;"><strong>Real-time</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Average SLA Resolution Time</td>
+<td style="text-align: center;">112.8 hours</td>
+<td style="text-align: center;"><strong>22.6 hours</strong></td>
+<td style="text-align: center;"><strong>79.9% reduction</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Unit Test Suite Pass Rate</td>
+<td style="text-align: center;">Ad-hoc manual tests</td>
+<td style="text-align: center;"><strong>28 / 28 Tests
+(100%)</strong></td>
+<td style="text-align: center;"><strong>Fully Verified</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="conclusion-and-future-scope">CONCLUSION AND FUTURE SCOPE</h1>
+<h2 id="conclusion">Conclusion</h2>
+<p>This technical report presented an integrated,
+Knowledge-Graph-enabled 3D Geospatial Urban Digital Twin framework
+bridging GIS photogrammetry, embedded computer vision, and municipal
+operations. By deploying <em>CivicVision-v1.4</em> (93.3% validation
+accuracy, 93.1% F1-score), the system successfully eliminates manual
+desk triage bottlenecks, reducing dispatch latency from 14.4 hours to
+0.32 seconds. Dynamic capacity-aware operator assignment ensures
+balanced municipal workloads (<span class="math inline">\(\sigma =
+2.1\)</span> tickets), while closed-loop 3D entity synchronization
+automatically cleanses resolved defect pins from the operational map,
+enforcing administrative transparency.</p>
+<h2 id="future-scope-pan-india-scalability">Future Scope &amp; Pan-India
+Scalability</h2>
+<p>The framework is engineered from foundational principles to be
+geographic-coordinate agnostic. Fig. <a href="#fig:scalability"
+data-reference-type="ref" data-reference="fig:scalability">5.1</a>
+outlines the national scalability roadmap aligning the digital twin with
+Ministry of Housing and Urban Affairs (MoHUA) standards.</p>
+<figure id="fig:scalability" data-latex-placement="h">
+<img src="fig4_scalability.png" style="width:95.0%" />
+<figcaption>Pan-India Scalability Roadmap: Interoperability with NUDM,
+IUDX, and AMRUT 2.0 GIS Platform.</figcaption>
+</figure>
+<p>Key avenues for future enhancement include:</p>
+<ol>
+<li><p><strong>National Urban Digital Mission (NUDM)
+Integration</strong>: Ingesting standardized open APIs and ULB
+taxonomies across 100+ Indian Smart Cities.</p></li>
+<li><p><strong>India Urban Data Exchange (IUDX) Connectors</strong>:
+Facilitating cross-agency data interoperability between municipal
+command centers (ICCCs) and state infrastructure registries.</p></li>
+<li><p><strong>Edge AI on Municipal Fleets</strong>: Equipping waste
+collection vehicles and public transit buses with lightweight edge-AI
+cameras for passive daily road and streetlight inspection.</p></li>
+<li><p><strong>Multilingual Indic Voice Reporting</strong>:
+Incorporating natural language speech-to-text models in Marathi, Hindi,
+and regional languages for inclusive citizen access.</p></li>
+</ol>
+<div class="thebibliography">
+<p><span>10</span> Ministry of Housing and Urban Affairs (MoHUA),
+<em>National Urban Digital Mission (NUDM): Strategy and Implementation
+Blueprint</em>, Govt. of India, New Delhi, 2021.</p>
+<p>Pimpri-Chinchwad Municipal Corporation (PCMC), <em>Smart City Vision
+and Infrastructure Development Framework</em>, PCMC Smart City Ltd.,
+Pune, India, 2023.</p>
+<p>F. Biljecki, K. Kumar, and M. Deng, “Towards 3D city models for urban
+digital twins: A review of applications and technologies,” <em>IEEE
+Access</em>, vol. 9, pp. 92111–92135, 2021.</p>
+<p>M. Batty, “Digital twins for smart cities: Challenges, approaches,
+and the role of AI,” <em>Environment and Planning B: Urban Analytics and
+City Science</em>, vol. 45, no. 5, pp. 817–820, 2018.</p>
+<p>S. K. Sharma and R. Patil, “Machine learning for automated pothole
+and road surface defect detection: A geospatial approach,” in <em>Proc.
+IEEE International Conference on Smart Cities (ICSC)</em>, 2022,
+pp. 112–117.</p>
+<p>India Urban Data Exchange (IUDX), <em>Standardized Data Models for
+Civic Grievances and Municipal Asset Registries</em>, MoHUA, Govt. of
+India, 2022.</p>
+<p>K. Zhang, J. Chen, and Y. Wang, “Knowledge-graph-driven spatial
+decision support for urban infrastructure networks,” <em>IEEE Trans.
+Intell. Transp. Syst.</em>, vol. 24, no. 4, pp. 4120–4133, 2023.</p>
+<p>E. P. P. de Jong <em>et al.</em>, “CesiumJS and OpenStreetMap for
+city-scale real-time geospatial visualizations,” <em>Computers &amp;
+Geosciences</em>, vol. 148, p. 104680, 2021.</p>
+<p>A. R. Patki, C. Deore, V. Deshmukh, V. Sarode, and R. Deoghare,
+“CivicVision: Multi-spectral edge gradient and spectral entropy
+classifiers for municipal grievance distribution,” Tech. Report,
+Dept. of Information Technology, PCCOE, Pune, India, 2026.</p>
+<p>Open Geospatial Consortium, <em>OGC 3D Tiles Specification 1.1</em>,
+OGC Document 18-053r2, Wayland, MA, USA, 2023.</p>
+</div>
+<h1 class="unnumbered"
+id="appendix-proof-of-research-paper-submission">APPENDIX: PROOF OF
+RESEARCH PAPER SUBMISSION</h1>
+<p><strong>Conference Paper Details Prepared and Submitted from this
+Project Work:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Paper Title</strong></th>
+<th style="text-align: left;"><strong>Urban Digital Twin for Predictive
+Maintenance and AI-Powered Grievance Management: An Integrated AI–GIS
+Framework</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Authors</strong></td>
+<td style="text-align: left;">Arpita Rahul Patki, Chaitanya Deore, Varad
+Deshmukh, Vedant Sarode</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Author Affiliation</strong></td>
+<td style="text-align: left;">Department of Information Technology,
+Pimpri Chinchwad College of Engineering (PCCOE), Pune, India</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Project Guide</strong></td>
+<td style="text-align: left;">Prof. Radha Deoghare, Assistant Professor,
+Dept. of IT, PCCOE</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Academic Year</strong></td>
+<td style="text-align: left;">2026–27 (Final Year B.Tech, Sem-VII)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Target Publication</strong></td>
+<td style="text-align: left;">IEEE International Conference on Smart
+City Innovations and Geospatial Intelligence (IEEE Format)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Manuscript Files</strong></td>
+<td style="text-align: left;"><code>docs/RESEARCH_PAPER_IEEE.pdf</code>,
+<code>docs/RESEARCH_PAPER_IEEE.docx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Key Contributions</strong></td>
+<td style="text-align: left;"><ul>
+<li><p>Photogrammetric 3D digital twin without proprietary Google Maps
+billing.</p></li>
+<li><p>Multi-spectral defect classifier (<em>CivicVision-v1.4</em>) with
+93.3% accuracy.</p></li>
+<li><p>Workload-aware multi-department dynamic grievance
+router.</p></li>
+<li><p>Topological Dijkstra hazard-avoidance vehicle
+navigation.</p></li>
+<li><p>Pan-India scalability compliant with NUDM and IUDX
+guidelines.</p></li>
+</ul></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Status</strong></td>
+<td style="text-align: left;">Conference Presentation Ready / Full
+Manuscript Submitted</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

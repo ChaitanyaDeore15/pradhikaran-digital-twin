@@ -1,0 +1,19 @@
+{
+  "name": "@pradhikaran/ingestion",
+  "version": "1.0.0",
+  "description": "Automated OSM Overpass data ingestion and normalization for PCCOE 1 km study area",
+  "private": true,
+  "scripts": {
+    "build": "echo Ingestion script ready",
+    "ingest": "ts-node -T src/ingest.ts"
+  },
+  "dependencies": {
+    "@turf/turf": "^7.1.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

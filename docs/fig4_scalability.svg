@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 330" width="100%" height="100%" style="background:#ffffff; font-family:'Times New Roman', Times, serif;">
+  <defs>
+    <marker id="blkArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="940" height="330" fill="#ffffff"/>
+
+  <!-- Title / Figure Header -->
+  <g transform="translate(30, 18)">
+    <text x="440" y="16" font-size="13" font-weight="bold" fill="#000000" text-anchor="middle" letter-spacing="0.5">
+      FIG. 4. PAN-INDIA SCALABILITY ARCHITECTURE AND NATIONAL URBAN DIGITAL MISSION (NUDM) ALIGNMENT
+    </text>
+    <line x1="0" y1="26" x2="880" y2="26" stroke="#000000" stroke-width="0.8"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- COLUMN 1: NATIONAL URBAN STANDARDS & PLATFORMS                            -->
+  <!-- ========================================================================= -->
+  <g transform="translate(30, 52)">
+    <rect x="0" y="0" width="260" height="255" fill="#fafafa" stroke="#000000" stroke-width="1"/>
+    
+    <!-- Header -->
+    <rect x="0" y="0" width="260" height="24" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+    <text x="130" y="16" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">
+      1. National Standards &amp; Ingestion
+    </text>
+
+    <!-- Item A -->
+    <g transform="translate(12, 34)">
+      <rect x="0" y="0" width="236" height="62" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <text x="10" y="18" font-size="9.5" font-weight="bold" fill="#000000">NUDM (MoHUA Framework)</text>
+      <text x="10" y="34" font-size="8.5" fill="#222222">• Open-API architectural reference</text>
+      <text x="10" y="48" font-size="8.5" fill="#222222">• Standardized municipal taxonomies</text>
+    </g>
+
+    <!-- Item B -->
+    <g transform="translate(12, 106)">
+      <rect x="0" y="0" width="236" height="62" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <text x="10" y="18" font-size="9.5" font-weight="bold" fill="#000000">India Urban Data Exchange (IUDX)</text>
+      <text x="10" y="34" font-size="8.5" fill="#222222">• Standard civic grievance schemas</text>
+      <text x="10" y="48" font-size="8.5" fill="#222222">• Cross-agency data interoperability</text>
+    </g>
+
+    <!-- Item C -->
+    <g transform="translate(12, 178)">
+      <rect x="0" y="0" width="236" height="62" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <text x="10" y="18" font-size="9.5" font-weight="bold" fill="#000000">AMRUT 2.0 GIS Platform</text>
+      <text x="10" y="34" font-size="8.5" fill="#222222">• WGS84 geodetic coordinate registry</text>
+      <text x="10" y="48" font-size="8.5" fill="#222222">• OGC 3D Tiles &amp; Overpass Turbo OSM</text>
+    </g>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <g stroke="#000000" stroke-width="1.2" fill="none">
+    <line x1="290" y1="180" x2="335" y2="180" marker-end="url(#blkArrow)"/>
+    <text x="312" y="172" font-size="7.5" fill="#333333" text-anchor="middle" font-family="'Times New Roman', Times, serif">Open Ingestion</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- COLUMN 2: OPEN DIGITAL TWIN CORE ENGINE                                   -->
+  <!-- ========================================================================= -->
+  <g transform="translate(340, 52)">
+    <rect x="0" y="0" width="265" height="255" fill="#fafafa" stroke="#000000" stroke-width="1"/>
+    
+    <!-- Header -->
+    <rect x="0" y="0" width="265" height="24" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+    <text x="132" y="16" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">
+      2. Modular Digital Twin Core Engine
+    </text>
+
+    <!-- Core Features in Box -->
+    <g transform="translate(12, 34)">
+      <rect x="0" y="0" width="241" height="206" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      
+      <text x="10" y="20" font-size="9" font-weight="bold" fill="#000000">• Coordinate-Agnostic Photogrammetry</text>
+      <text x="18" y="35" font-size="8.5" fill="#333333">Parametric center (lat, lon) &amp; bounding radius;</text>
+      <text x="18" y="49" font-size="8.5" fill="#333333">instant re-anchoring to any Indian city sector.</text>
+
+      <line x1="10" y1="58" x2="231" y2="58" stroke="#dddddd" stroke-width="0.8"/>
+
+      <text x="10" y="74" font-size="9" font-weight="bold" fill="#000000">• Zero Proprietary Licensing Overhead</text>
+      <text x="18" y="89" font-size="8.5" fill="#333333">Independent of Google Maps Platform API billing;</text>
+      <text x="18" y="103" font-size="8.5" fill="#333333">powered by open CesiumJS &amp; OpenStreetMap.</text>
+
+      <line x1="10" y1="112" x2="231" y2="112" stroke="#dddddd" stroke-width="0.8"/>
+
+      <text x="10" y="128" font-size="9" font-weight="bold" fill="#000000">• Procedural 3D Footprint Extrusion</text>
+      <text x="18" y="143" font-size="8.5" fill="#333333">Auto-derives building height from OSM tags,</text>
+      <text x="18" y="157" font-size="8.5" fill="#333333">building:levels, and geometric aspect ratios.</text>
+
+      <line x1="10" y1="166" x2="231" y2="166" stroke="#dddddd" stroke-width="0.8"/>
+
+      <text x="10" y="182" font-size="9" font-weight="bold" fill="#000000">• Multi-Tenant Department Routing</text>
+      <text x="18" y="197" font-size="8.5" fill="#333333">Configurable jurisdiction &amp; operator capacity.</text>
+    </g>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <g stroke="#000000" stroke-width="1.2" fill="none">
+    <line x1="605" y1="180" x2="650" y2="180" marker-end="url(#blkArrow)"/>
+    <text x="627" y="172" font-size="7.5" fill="#333333" text-anchor="middle" font-family="'Times New Roman', Times, serif">Deployment</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- COLUMN 3: TIERED URBAN LOCAL BODY (ULB) DEPLOYMENTS                       -->
+  <!-- ========================================================================= -->
+  <g transform="translate(655, 52)">
+    <rect x="0" y="0" width="255" height="255" fill="#fafafa" stroke="#000000" stroke-width="1"/>
+    
+    <!-- Header -->
+    <rect x="0" y="0" width="255" height="24" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+    <text x="127" y="16" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">
+      3. Tiered Municipal Deployment
+    </text>
+
+    <!-- Target A -->
+    <g transform="translate(10, 34)">
+      <rect x="0" y="0" width="235" height="62" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <text x="10" y="18" font-size="9.5" font-weight="bold" fill="#000000">PCMC Pilot Testbed (Validated)</text>
+      <text x="10" y="34" font-size="8.5" fill="#222222">• Pradhikaran 1-km core digital twin</text>
+      <text x="10" y="48" font-size="8.5" fill="#222222">• 6 departments, 840+ entities, 22.6 h SLA</text>
+    </g>
+
+    <!-- Target B -->
+    <g transform="translate(10, 106)">
+      <rect x="0" y="0" width="235" height="62" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <text x="10" y="18" font-size="9.5" font-weight="bold" fill="#000000">100+ Indian Smart Cities (ICCC)</text>
+      <text x="10" y="34" font-size="8.5" fill="#222222">• Integrated Command &amp; Control Centers</text>
+      <text x="10" y="48" font-size="8.5" fill="#222222">• City-scale 3D twin &amp; sensor ingestion</text>
+    </g>
+
+    <!-- Target C -->
+    <g transform="translate(10, 178)">
+      <rect x="0" y="0" width="235" height="62" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <text x="10" y="18" font-size="9.5" font-weight="bold" fill="#000000">Tier-2 / Tier-3 Municipal Councils</text>
+      <text x="10" y="34" font-size="8.5" fill="#222222">• Zero-cost base cartography deployment</text>
+      <text x="10" y="48" font-size="8.5" fill="#222222">• Low-spec single-VM municipal instance</text>
+    </g>
+  </g>
+</svg>

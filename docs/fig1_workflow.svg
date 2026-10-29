@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 390" width="100%" height="100%" style="background:#ffffff; font-family:'Times New Roman', Times, serif;">
+  <defs>
+    <marker id="blkArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="390" fill="#ffffff"/>
+
+  <!-- Title / Figure Header -->
+  <g transform="translate(30, 20)">
+    <text x="430" y="18" font-size="13" font-weight="bold" fill="#000000" text-anchor="middle" letter-spacing="0.5">
+      FIG. 1. PARADIGM COMPARISON: TRADITIONAL MUNICIPAL WORKFLOW VS. PROPOSED CLOSED-LOOP DIGITAL TWIN
+    </text>
+    <line x1="0" y1="28" x2="860" y2="28" stroke="#000000" stroke-width="0.8"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- (a) TRADITIONAL MUNICIPAL WORKFLOW (Passive / Open-Loop)                  -->
+  <!-- ========================================================================= -->
+  <g transform="translate(30, 60)">
+    <rect x="0" y="0" width="860" height="135" fill="#ffffff" stroke="#000000" stroke-width="1" stroke-dasharray="4,3"/>
+    
+    <!-- Panel Label -->
+    <rect x="15" y="-10" width="310" height="20" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+    <text x="170" y="4" font-size="9" font-weight="bold" fill="#000000" text-anchor="middle">
+      (a) TRADITIONAL MUNICIPAL WORKFLOW (Passive / Open-Loop)
+    </text>
+
+    <!-- Step 1 -->
+    <g transform="translate(20, 22)">
+      <rect x="0" y="0" width="165" height="96" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <rect x="0" y="0" width="165" height="20" fill="#f5f5f5" stroke="#000000" stroke-width="0.8"/>
+      <text x="82" y="14" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">1. Citizen Filing</text>
+      <text x="8" y="36" font-size="8.5" fill="#222222">• Unstructured complaint text</text>
+      <text x="8" y="52" font-size="8.5" fill="#222222">• Approximate landmark / text</text>
+      <text x="8" y="68" font-size="8.5" fill="#222222">• No photographic validation</text>
+      <text x="8" y="84" font-size="8.5" fill="#555555">• High duplicate submission rate</text>
+    </g>
+
+    <line x1="185" y1="70" x2="225" y2="70" stroke="#000000" stroke-width="1.2" marker-end="url(#blkArrow)"/>
+
+    <!-- Step 2 -->
+    <g transform="translate(225, 22)">
+      <rect x="0" y="0" width="175" height="96" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <rect x="0" y="0" width="175" height="20" fill="#f5f5f5" stroke="#000000" stroke-width="0.8"/>
+      <text x="87" y="14" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">2. Manual Desk Triage</text>
+      <text x="8" y="36" font-size="8.5" fill="#222222">• Manual clerk ticket reading</text>
+      <text x="8" y="52" font-size="8.5" fill="#222222">• 14.4 h average queue delay</text>
+      <text x="8" y="68" font-size="8.5" fill="#222222">• Subjective department selection</text>
+      <text x="8" y="84" font-size="8.5" fill="#555555">• No capacity-aware balancing</text>
+    </g>
+
+    <line x1="400" y1="70" x2="440" y2="70" stroke="#000000" stroke-width="1.2" marker-end="url(#blkArrow)"/>
+
+    <!-- Step 3 -->
+    <g transform="translate(440, 22)">
+      <rect x="0" y="0" width="175" height="96" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <rect x="0" y="0" width="175" height="20" fill="#f5f5f5" stroke="#000000" stroke-width="0.8"/>
+      <text x="87" y="14" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">3. Siloed Dispatch</text>
+      <text x="8" y="36" font-size="8.5" fill="#222222">• 28.4% misrouting frequency</text>
+      <text x="8" y="52" font-size="8.5" fill="#222222">• Inter-departmental bouncing</text>
+      <text x="8" y="68" font-size="8.5" fill="#222222">• Operator overload / skew</text>
+      <text x="8" y="84" font-size="8.5" fill="#555555">• Static jurisdictional boundaries</text>
+    </g>
+
+    <line x1="615" y1="70" x2="655" y2="70" stroke="#000000" stroke-width="1.2" marker-end="url(#blkArrow)"/>
+
+    <!-- Step 4 -->
+    <g transform="translate(655, 22)">
+      <rect x="0" y="0" width="185" height="96" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <rect x="0" y="0" width="185" height="20" fill="#f5f5f5" stroke="#000000" stroke-width="0.8"/>
+      <text x="92" y="14" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">4. Unverified Resolution</text>
+      <text x="8" y="36" font-size="8.5" fill="#222222">• Disconnected paper work-orders</text>
+      <text x="8" y="52" font-size="8.5" fill="#222222">• 112.8 h average turnaround</text>
+      <text x="8" y="68" font-size="8.5" fill="#222222">• Static 2D pins remain on portal</text>
+      <text x="8" y="84" font-size="8.5" fill="#555555">• No SLA feedback or audit log</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- (b) PROPOSED CLOSED-LOOP DIGITAL TWIN WORKFLOW                           -->
+  <!-- ========================================================================= -->
+  <g transform="translate(30, 220)">
+    <rect x="0" y="0" width="860" height="145" fill="#fafafa" stroke="#000000" stroke-width="1"/>
+    
+    <!-- Panel Label -->
+    <rect x="15" y="-10" width="350" height="20" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+    <text x="190" y="4" font-size="9" font-weight="bold" fill="#000000" text-anchor="middle">
+      (b) PROPOSED CLOSED-LOOP DIGITAL TWIN FRAMEWORK (Active / AI-Driven)
+    </text>
+
+    <!-- Step 1 -->
+    <g transform="translate(20, 22)">
+      <rect x="0" y="0" width="165" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <rect x="0" y="0" width="165" height="20" fill="#eeeeee" stroke="#000000" stroke-width="0.8"/>
+      <text x="82" y="14" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">1. Geocoded Intake</text>
+      <text x="8" y="36" font-size="8.5" fill="#111111">• Raycast 3D building picking</text>
+      <text x="8" y="52" font-size="8.5" fill="#111111">• PostGIS reverse geocoding</text>
+      <text x="8" y="68" font-size="8.5" fill="#111111">• Mobile photographic capture</text>
+      <text x="8" y="84" font-size="8.5" fill="#111111">• WGS84 asset association</text>
+      <text x="8" y="99" font-size="8" fill="#444444">Precision: Lat/Long + Height</text>
+    </g>
+
+    <line x1="185" y1="75" x2="225" y2="75" stroke="#000000" stroke-width="1.2" marker-end="url(#blkArrow)"/>
+
+    <!-- Step 2 -->
+    <g transform="translate(225, 22)">
+      <rect x="0" y="0" width="175" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <rect x="0" y="0" width="175" height="20" fill="#eeeeee" stroke="#000000" stroke-width="0.8"/>
+      <text x="87" y="14" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">2. AI Vision Inference</text>
+      <text x="8" y="36" font-size="8.5" fill="#111111">• CivicVision-v1.4 ResNet-50</text>
+      <text x="8" y="52" font-size="8.5" fill="#111111">• Multi-class category classification</text>
+      <text x="8" y="68" font-size="8.5" fill="#111111">• Severity index computation</text>
+      <text x="8" y="84" font-size="8.5" fill="#111111">• Confidence gating (τ = 0.70)</text>
+      <text x="8" y="99" font-size="8" fill="#444444">Inference Latency: 84 ms | F1: 95.1%</text>
+    </g>
+
+    <line x1="400" y1="75" x2="440" y2="75" stroke="#000000" stroke-width="1.2" marker-end="url(#blkArrow)"/>
+
+    <!-- Step 3 -->
+    <g transform="translate(440, 22)">
+      <rect x="0" y="0" width="175" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <rect x="0" y="0" width="175" height="20" fill="#eeeeee" stroke="#000000" stroke-width="0.8"/>
+      <text x="87" y="14" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">3. Workload-Aware Routing</text>
+      <text x="8" y="36" font-size="8.5" fill="#111111">• 6-Dept jurisdiction matrix</text>
+      <text x="8" y="52" font-size="8.5" fill="#111111">• Operator capacity scoring (W_k)</text>
+      <text x="8" y="68" font-size="8.5" fill="#111111">• Geographic proximity routing</text>
+      <text x="8" y="84" font-size="8.5" fill="#111111">• Automated work-order generation</text>
+      <text x="8" y="99" font-size="8" fill="#444444">Assignment Time: 0.42 s (100% auditable)</text>
+    </g>
+
+    <line x1="615" y1="75" x2="655" y2="75" stroke="#000000" stroke-width="1.2" marker-end="url(#blkArrow)"/>
+
+    <!-- Step 4 -->
+    <g transform="translate(655, 22)">
+      <rect x="0" y="0" width="185" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+      <rect x="0" y="0" width="185" height="20" fill="#eeeeee" stroke="#000000" stroke-width="0.8"/>
+      <text x="92" y="14" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">4. Closed-Loop Twin Sync</text>
+      <text x="8" y="36" font-size="8.5" fill="#111111">• Live Cesium 3D status pin sync</text>
+      <text x="8" y="52" font-size="8.5" fill="#111111">• Automated entity cleanup on resolution</text>
+      <text x="8" y="68" font-size="8.5" fill="#111111">• Multi-party work order collaboration</text>
+      <text x="8" y="84" font-size="8.5" fill="#111111">• PostgreSQL transaction log &amp; SLA</text>
+      <text x="8" y="99" font-size="8" fill="#444444">Avg SLA: 22.6 h | Resolution Rate: 91.8%</text>
+    </g>
+  </g>
+</svg>

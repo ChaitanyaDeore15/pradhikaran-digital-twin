@@ -1,0 +1,279 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 820" width="100%" height="100%" style="background:#ffffff; font-family:'Times New Roman', Times, serif;">
+  <defs>
+    <marker id="blkArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="820" fill="#ffffff"/>
+
+  <!-- Title / Figure Header -->
+  <g transform="translate(40, 20)">
+    <text x="510" y="20" font-size="14" font-weight="bold" fill="#000000" text-anchor="middle" letter-spacing="0.5">
+      FIG. 2. OVERALL SYSTEM ARCHITECTURE OF THE INTEGRATED AI–GIS URBAN DIGITAL TWIN
+    </text>
+    <line x1="0" y1="32" x2="1020" y2="32" stroke="#000000" stroke-width="0.8"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- TIER 1: 3D GEOSPATIAL PRESENTATION LAYER                                  -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 68)">
+    <rect x="0" y="0" width="1020" height="140" fill="#fafafa" stroke="#000000" stroke-width="1" stroke-dasharray="4,3"/>
+    
+    <!-- Tier Label -->
+    <rect x="15" y="-11" width="280" height="20" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <text x="155" y="3" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">
+      TIER 1: 3D GEOSPATIAL PRESENTATION
+    </text>
+
+    <!-- Component 1 -->
+    <g transform="translate(20, 22)">
+      <rect x="0" y="0" width="225" height="102" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="225" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="112" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">3D Photogrammetry (CesiumJS)</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• 3D OSM Building Footprint Extrusion</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Ellipsoidal Terrain Clamping (WGS84)</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Geodesic 1-km Core Study Buffer</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Clustered Spatial Entity Overlay</text>
+    </g>
+
+    <!-- Component 2 -->
+    <g transform="translate(265, 22)">
+      <rect x="0" y="0" width="230" height="102" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="230" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="115" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Citizen Grievance Redressal UI</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• Photographic Evidence Ingestion</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Real-Time Vision Recommendation</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Multi-Spectral Metric Verification</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Coordinates Verification &amp; Pin Drop</text>
+    </g>
+
+    <!-- Component 3 -->
+    <g transform="translate(515, 22)">
+      <rect x="0" y="0" width="235" height="102" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="235" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="117" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Authority Management Console</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• 6-Department Workload Monitor</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Resolution SLA Aging &amp; Backlog</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Work Order Issuance &amp; Dispatch</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Cryptographic Audit Log View</text>
+    </g>
+
+    <!-- Component 4 -->
+    <g transform="translate(770, 22)">
+      <rect x="0" y="0" width="230" height="102" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="230" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="115" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Topological Analysis &amp; Routing</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• Hazard-Aware Dynamic Detour</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• 15-Junction Graph Edge Cost View</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Multi-Hop Knowledge Graph View</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Scenario Simulation Sandboxing</text>
+    </g>
+  </g>
+
+  <!-- Connectors Tier 1 -> Tier 2 -->
+  <g stroke="#000000" stroke-width="1" fill="none">
+    <line x1="172" y1="208" x2="172" y2="238" marker-end="url(#blkArrow)"/>
+    <line x1="420" y1="208" x2="420" y2="238" marker-end="url(#blkArrow)"/>
+    <line x1="672" y1="208" x2="672" y2="238" marker-end="url(#blkArrow)"/>
+    <line x1="925" y1="208" x2="925" y2="238" marker-end="url(#blkArrow)"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- TIER 2: API GATEWAY & ROUTING ENGINE                                      -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 240)">
+    <rect x="0" y="0" width="1020" height="145" fill="#fafafa" stroke="#000000" stroke-width="1" stroke-dasharray="4,3"/>
+    
+    <!-- Tier Label -->
+    <rect x="15" y="-11" width="310" height="20" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <text x="170" y="3" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">
+      TIER 2: API GATEWAY &amp; OPERATIONAL SERVICES
+    </text>
+
+    <!-- Component 1 -->
+    <g transform="translate(20, 22)">
+      <rect x="0" y="0" width="225" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="225" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="112" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">REST Gateway (/api/v1)</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• Node.js / Express Architecture</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Zod Strict Schema Validation</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Role-Based Access Control (RBAC)</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Stateless Scalable REST Endpoints</text>
+    </g>
+
+    <!-- Component 2 -->
+    <g transform="translate(265, 22)">
+      <rect x="0" y="0" width="230" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="230" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="115" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Department Triage Engine</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• 6-Department Categorization Rules</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Department SLA Timers (12h - 48h)</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Priority Function Optimization</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Out-of-Jurisdiction Boundary Guard</text>
+    </g>
+
+    <!-- Component 3 -->
+    <g transform="translate(515, 22)">
+      <rect x="0" y="0" width="235" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="235" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="117" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Workload Balancing Service</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• Min Active Queue Ratio Formula</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Prevents Staff Queue Saturation</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Multi-Department Collaboration</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Work Order State Synchronization</text>
+    </g>
+
+    <!-- Component 4 -->
+    <g transform="translate(770, 22)">
+      <rect x="0" y="0" width="230" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="230" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="115" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Network Router &amp; Audit Log</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• Dijkstra Shortest Path Search</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Dynamic Hazard Edge Weighting</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Cryptographic Audit Entries</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Immutable Action &amp; Reason History</text>
+    </g>
+  </g>
+
+  <!-- Connectors Tier 2 -> Tier 3 -->
+  <g stroke="#000000" stroke-width="1" fill="none">
+    <line x1="172" y1="385" x2="172" y2="415" marker-end="url(#blkArrow)"/>
+    <line x1="420" y1="385" x2="420" y2="415" marker-end="url(#blkArrow)"/>
+    <line x1="672" y1="385" x2="672" y2="415" marker-end="url(#blkArrow)"/>
+    <line x1="925" y1="385" x2="925" y2="415" marker-end="url(#blkArrow)"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- TIER 3: MULTI-MODAL AI & KNOWLEDGE GRAPH TIER                             -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 417)">
+    <rect x="0" y="0" width="1020" height="145" fill="#fafafa" stroke="#000000" stroke-width="1" stroke-dasharray="4,3"/>
+    
+    <!-- Tier Label -->
+    <rect x="15" y="-11" width="310" height="20" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <text x="170" y="3" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">
+      TIER 3: MULTI-MODAL AI &amp; KNOWLEDGE GRAPH
+    </text>
+
+    <!-- Component 1 -->
+    <g transform="translate(20, 22)">
+      <rect x="0" y="0" width="225" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="225" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="112" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">CivicVision-v1.4 Feature Extractor</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• Sobel Edge Variance (x1, Pothole)</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Specular Reflectance (x2, Drainage)</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• NDGI Vegetation Index (x3, Trees)</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Shannon Entropy (x4, Solid Waste)</text>
+    </g>
+
+    <!-- Component 2 -->
+    <g transform="translate(265, 22)">
+      <rect x="0" y="0" width="230" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="230" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="115" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Multiclass Regularized Softmax</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• 6-Class Municipal Department Space</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Validation Accuracy: 93.3%</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Validation F1-Score: 93.1%</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Sub-second Embedded Execution</text>
+    </g>
+
+    <!-- Component 3 -->
+    <g transform="translate(515, 22)">
+      <rect x="0" y="0" width="235" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="235" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="117" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Heterogeneous Knowledge Graph</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• Entity Graph: G = (V, E, R)</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Multi-Hop Cascading Risk Spreading</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Utility Structural Dependencies</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Pavement Sub-Base Degradation</text>
+    </g>
+
+    <!-- Component 4 -->
+    <g transform="translate(770, 22)">
+      <rect x="0" y="0" width="230" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="230" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="115" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Predictive Infrastructure Risk</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• Asset Degradation Probability ML</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Asset Age &amp; Traffic Volume Factors</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Defect Density Historical Weights</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Pre-Failure Proactive Maintenance</text>
+    </g>
+  </g>
+
+  <!-- Connectors Tier 3 -> Tier 4 -->
+  <g stroke="#000000" stroke-width="1" fill="none">
+    <line x1="172" y1="562" x2="172" y2="592" marker-end="url(#blkArrow)"/>
+    <line x1="420" y1="562" x2="420" y2="592" marker-end="url(#blkArrow)"/>
+    <line x1="672" y1="562" x2="672" y2="592" marker-end="url(#blkArrow)"/>
+    <line x1="925" y1="562" x2="925" y2="592" marker-end="url(#blkArrow)"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- TIER 4: GIS DATA REPOSITORY & PERSISTENCE LAYER                           -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 594)">
+    <rect x="0" y="0" width="1020" height="145" fill="#fafafa" stroke="#000000" stroke-width="1" stroke-dasharray="4,3"/>
+    
+    <!-- Tier Label -->
+    <rect x="15" y="-11" width="310" height="20" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <text x="170" y="3" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">
+      TIER 4: GIS PERSISTENCE &amp; NATIONAL DATA
+    </text>
+
+    <!-- Component 1 -->
+    <g transform="translate(20, 22)">
+      <rect x="0" y="0" width="225" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="225" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="112" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Turf.js &amp; PostGIS Spatial Engine</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• Geodesic Distance Queries (WGS84)</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Spatial Proximity Clustering</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Zero-Config Standalone Engine</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• GeoJSON Native Format Support</text>
+    </g>
+
+    <!-- Component 2 -->
+    <g transform="translate(265, 22)">
+      <rect x="0" y="0" width="230" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="230" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="115" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Civic Asset Registry</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• Verified PCCOE Campus Assets</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Road Segments &amp; Intersection Nodes</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Stormwater Drains &amp; Potable Mains</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Persistent Geographic Asset IDs</text>
+    </g>
+
+    <!-- Component 3 -->
+    <g transform="translate(515, 22)">
+      <rect x="0" y="0" width="235" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="235" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="117" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Department Policy Store</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• Department Organizational Registry</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• Operator Workload Quota Table</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• Category-to-Department Rules</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Resolution Target SLA Registry</text>
+    </g>
+
+    <!-- Component 4 -->
+    <g transform="translate(770, 22)">
+      <rect x="0" y="0" width="230" height="106" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+      <rect x="0" y="0" width="230" height="22" fill="#eeeeee" stroke="#000000" stroke-width="0.9"/>
+      <text x="115" y="15" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Pan-India Interoperability</text>
+      <text x="10" y="38" font-size="8.5" fill="#111111">• National Urban Digital Mission (NUDM)</text>
+      <text x="10" y="54" font-size="8.5" fill="#111111">• India Urban Data Exchange (IUDX)</text>
+      <text x="10" y="70" font-size="8.5" fill="#111111">• OGC 3D Tiles 1.1 Specification</text>
+      <text x="10" y="86" font-size="8.5" fill="#111111">• Integrated Command Center (ICCC)</text>
+    </g>
+  </g>
+
+  <!-- Bottom Caption -->
+  <g transform="translate(40, 755)">
+    <line x1="0" y1="0" x2="1020" y2="0" stroke="#000000" stroke-width="0.8"/>
+    <text x="510" y="18" font-size="8.5" font-style="italic" fill="#222222" text-anchor="middle">
+      Four-tier decoupled architecture separating presentation, microservice routing, intelligence, and persistent spatial storage. Tested on PCCOE 1-km core testbed and scalable pan-India.
+    </text>
+  </g>
+
+</svg>

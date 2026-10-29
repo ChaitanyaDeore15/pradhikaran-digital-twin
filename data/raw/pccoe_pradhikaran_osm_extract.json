@@ -1,0 +1,146 @@
+{
+  "version": 0.6,
+  "generator": "PradhikaranDigitalTwin/1.0",
+  "elements": [
+    {
+      "type": "node",
+      "id": 1001,
+      "lat": 18.650886,
+      "lon": 73.761055
+    },
+    {
+      "type": "node",
+      "id": 1002,
+      "lat": 18.650886,
+      "lon": 73.763137
+    },
+    {
+      "type": "node",
+      "id": 1003,
+      "lat": 18.654659,
+      "lon": 73.763137
+    },
+    {
+      "type": "node",
+      "id": 1004,
+      "lat": 18.654659,
+      "lon": 73.761055
+    },
+    {
+      "type": "way",
+      "id": 177084644,
+      "nodes": [
+        1001,
+        1002,
+        1003,
+        1004,
+        1001
+      ],
+      "tags": {
+        "amenity": "university",
+        "building": "university",
+        "name": "Pimpri Chinchwad College Of Engineering",
+        "building:levels": "5"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2001,
+      "lat": 18.647,
+      "lon": 73.76
+    },
+    {
+      "type": "node",
+      "id": 2002,
+      "lat": 18.65,
+      "lon": 73.7605
+    },
+    {
+      "type": "node",
+      "id": 2003,
+      "lat": 18.652,
+      "lon": 73.761055
+    },
+    {
+      "type": "node",
+      "id": 2004,
+      "lat": 18.654,
+      "lon": 73.761536
+    },
+    {
+      "type": "node",
+      "id": 2005,
+      "lat": 18.6565,
+      "lon": 73.762
+    },
+    {
+      "type": "node",
+      "id": 2006,
+      "lat": 18.659,
+      "lon": 73.7628
+    },
+    {
+      "type": "way",
+      "id": 3001,
+      "nodes": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006
+      ],
+      "tags": {
+        "highway": "secondary",
+        "name": "Krantisinha Nana Patil Road",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3001,
+      "lat": 18.6515,
+      "lon": 73.754
+    },
+    {
+      "type": "node",
+      "id": 3002,
+      "lat": 18.6516,
+      "lon": 73.757
+    },
+    {
+      "type": "node",
+      "id": 3003,
+      "lat": 18.652,
+      "lon": 73.761055
+    },
+    {
+      "type": "node",
+      "id": 3004,
+      "lat": 18.6522,
+      "lon": 73.765
+    },
+    {
+      "type": "node",
+      "id": 3005,
+      "lat": 18.6525,
+      "lon": 73.769
+    },
+    {
+      "type": "way",
+      "id": 3002,
+      "nodes": [
+        3001,
+        3002,
+        3003,
+        3004,
+        3005
+      ],
+      "tags": {
+        "highway": "tertiary",
+        "name": "Pradhikaran Sector 26 Main Spine Avenue",
+        "surface": "asphalt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+[
+  {
+    "id": "asset-bu-177084644",
+    "studyAreaId": "sa-pccoe-1km",
+    "externalSourceId": "osm-way-177084644",
+    "assetType": "building",
+    "name": "Pimpri Chinchwad College Of Engineering",
+    "description": "Pimpri Chinchwad College Of Engineering in Sector 26 Pradhikaran",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.761055,
+            18.650886
+          ],
+          [
+            73.763137,
+            18.650886
+          ],
+          [
+            73.763137,
+            18.654659
+          ],
+          [
+            73.761055,
+            18.654659
+          ],
+          [
+            73.761055,
+            18.650886
+          ]
+        ]
+      ]
+    },
+    "centroid": [
+      73.762096,
+      18.652772499999998
+    ],
+    "conditionStatus": "GOOD",
+    "criticality": "HIGH",
+    "heightM": 17,
+    "heightSource": "inferred_from_levels",
+    "heightIsEstimated": true,
+    "dataSource": "OpenStreetMap contributors",
+    "sourceUrl": "https://www.openstreetmap.org/way/177084644",
+    "isSynthetic": false,
+    "isMargin": false,
+    "metadata": {
+      "amenity": "university",
+      "building": "university",
+      "name": "Pimpri Chinchwad College Of Engineering",
+      "building:levels": "5",
+      "distFromCenterM": 136
+    },
+    "createdAt": "2026-10-14T09:34:48.486Z",
+    "updatedAt": "2026-10-14T09:34:48.488Z"
+  },
+  {
+    "id": "asset-ro-3001",
+    "studyAreaId": "sa-pccoe-1km",
+    "externalSourceId": "osm-way-3001",
+    "assetType": "road",
+    "name": "Krantisinha Nana Patil Road",
+    "description": "Krantisinha Nana Patil Road in Sector 26 Pradhikaran",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          73.76,
+          18.647
+        ],
+        [
+          73.7605,
+          18.65
+        ],
+        [
+          73.761055,
+          18.652
+        ],
+        [
+          73.761536,
+          18.654
+        ],
+        [
+          73.762,
+          18.6565
+        ],
+        [
+          73.7628,
+          18.659
+        ]
+      ]
+    },
+    "centroid": [
+      73.761536,
+      18.654
+    ],
+    "conditionStatus": "GOOD",
+    "criticality": "HIGH",
+    "heightM": 0,
+    "heightSource": "default_visualization_fallback",
+    "heightIsEstimated": true,
+    "dataSource": "OpenStreetMap contributors",
+    "sourceUrl": "https://www.openstreetmap.org/way/3001",
+    "isSynthetic": false,
+    "isMargin": false,
+    "metadata": {
+      "highway": "secondary",
+      "name": "Krantisinha Nana Patil Road",
+      "surface": "asphalt",
+      "distFromCenterM": 259,
+      "length_m": 1368
+    },
+    "createdAt": "2026-10-14T09:34:48.494Z",
+    "updatedAt": "2026-10-14T09:34:48.494Z"
+  },
+  {
+    "id": "asset-ro-3002",
+    "studyAreaId": "sa-pccoe-1km",
+    "externalSourceId": "osm-way-3002",
+    "assetType": "road",
+    "name": "Pradhikaran Sector 26 Main Spine Avenue",
+    "description": "Pradhikaran Sector 26 Main Spine Avenue in Sector 26 Pradhikaran",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          73.754,
+          18.6515
+        ],
+        [
+          73.757,
+          18.6516
+        ],
+        [
+          73.761055,
+          18.652
+        ],
+        [
+          73.765,
+          18.6522
+        ],
+        [
+          73.769,
+          18.6525
+        ]
+      ]
+    },
+    "centroid": [
+      73.761055,
+      18.652
+    ],
+    "conditionStatus": "GOOD",
+    "criticality": "MEDIUM",
+    "heightM": 0,
+    "heightSource": "default_visualization_fallback",
+    "heightIsEstimated": true,
+    "dataSource": "OpenStreetMap contributors",
+    "sourceUrl": "https://www.openstreetmap.org/way/3002",
+    "isSynthetic": false,
+    "isMargin": false,
+    "metadata": {
+      "highway": "tertiary",
+      "name": "Pradhikaran Sector 26 Main Spine Avenue",
+      "surface": "asphalt",
+      "distFromCenterM": 62,
+      "length_m": 1585
+    },
+    "createdAt": "2026-10-14T09:34:48.495Z",
+    "updatedAt": "2026-10-14T09:34:48.495Z"
+  }
+]

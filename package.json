@@ -1,0 +1,23 @@
+{
+  "name": "pradhikaran-digital-twin",
+  "version": "1.0.0",
+  "description": "Knowledge-Graph-Enabled Urban Digital Twin for Predictive Infrastructure Maintenance, Simulation, and Citizen-Centric Decision Support",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "services/ingestion"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "npm --workspace=apps/api run dev",
+    "dev:web": "npm --workspace=apps/web run dev",
+    "build": "npm --workspace=apps/api run build && npm --workspace=apps/web run build",
+    "test": "npm --workspace=apps/api run test",
+    "seed": "npm --workspace=apps/api run seed",
+    "ingest": "npm --workspace=services/ingestion run ingest"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.4.5"
+  }
+}

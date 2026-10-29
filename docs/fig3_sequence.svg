@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 520" width="100%" height="100%" style="background:#ffffff; font-family:'Times New Roman', Times, serif;">
+  <defs>
+    <marker id="blkArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#000000"/>
+    </marker>
+    <marker id="blkArrowOpen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#000000" stroke-width="1.2"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="940" height="520" fill="#ffffff"/>
+
+  <!-- Title / Figure Header -->
+  <g transform="translate(30, 18)">
+    <text x="440" y="16" font-size="13" font-weight="bold" fill="#000000" text-anchor="middle" letter-spacing="0.5">
+      FIG. 3. UML SEQUENCE DIAGRAM: END-TO-END CITIZEN REPORTING, VISION INFERENCE, AND CLOSED-LOOP RESOLUTION
+    </text>
+    <line x1="0" y1="26" x2="880" y2="26" stroke="#000000" stroke-width="0.8"/>
+  </g>
+
+  <!-- Lifeline Entities -->
+  <!-- 1. Citizen Reporter (X = 90) -->
+  <g transform="translate(30, 55)">
+    <rect x="0" y="0" width="120" height="30" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <rect x="0" y="0" width="120" height="8" fill="#eeeeee" stroke="#000000" stroke-width="1"/>
+    <text x="60" y="22" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Citizen Reporter</text>
+    <line x1="60" y1="30" x2="60" y2="445" stroke="#000000" stroke-width="0.8" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- 2. CesiumJS 3D Client (X = 245) -->
+  <g transform="translate(185, 55)">
+    <rect x="0" y="0" width="120" height="30" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <rect x="0" y="0" width="120" height="8" fill="#eeeeee" stroke="#000000" stroke-width="1"/>
+    <text x="60" y="22" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">CesiumJS 3D Client</text>
+    <line x1="60" y1="30" x2="60" y2="445" stroke="#000000" stroke-width="0.8" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- 3. Gateway & PostGIS (X = 405) -->
+  <g transform="translate(345, 55)">
+    <rect x="0" y="0" width="125" height="30" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <rect x="0" y="0" width="125" height="8" fill="#eeeeee" stroke="#000000" stroke-width="1"/>
+    <text x="62" y="22" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Gateway / PostGIS</text>
+    <line x1="62" y1="30" x2="62" y2="445" stroke="#000000" stroke-width="0.8" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- 4. CivicVision-v1.4 (X = 565) -->
+  <g transform="translate(505, 55)">
+    <rect x="0" y="0" width="120" height="30" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <rect x="0" y="0" width="120" height="8" fill="#eeeeee" stroke="#000000" stroke-width="1"/>
+    <text x="60" y="22" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">CivicVision-v1.4</text>
+    <line x1="60" y1="30" x2="60" y2="445" stroke="#000000" stroke-width="0.8" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- 5. Workload Router & KG (X = 720) -->
+  <g transform="translate(660, 55)">
+    <rect x="0" y="0" width="120" height="30" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <rect x="0" y="0" width="120" height="8" fill="#eeeeee" stroke="#000000" stroke-width="1"/>
+    <text x="60" y="22" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Routing &amp; KG Engine</text>
+    <line x1="60" y1="30" x2="60" y2="445" stroke="#000000" stroke-width="0.8" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- 6. Field Ops Unit (X = 860) -->
+  <g transform="translate(805, 55)">
+    <rect x="0" y="0" width="110" height="30" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <rect x="0" y="0" width="110" height="8" fill="#eeeeee" stroke="#000000" stroke-width="1"/>
+    <text x="55" y="22" font-size="9.5" font-weight="bold" fill="#000000" text-anchor="middle">Field Ops Unit</text>
+    <line x1="55" y1="30" x2="55" y2="445" stroke="#000000" stroke-width="0.8" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Sequence Activations (Thin rects on lifelines) -->
+  <rect x="86" y="105" width="8" height="65" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+  <rect x="241" y="105" width="8" height="355" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+  <rect x="403" y="145" width="8" height="325" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+  <rect x="561" y="175" width="8" height="50" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+  <rect x="716" y="235" width="8" height="55" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+  <rect x="856" y="300" width="8" height="110" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+
+  <!-- Messages / Arrows -->
+  <!-- 1. Pick 3D location -->
+  <line x1="94" y1="112" x2="241" y2="112" stroke="#000000" stroke-width="1.1" marker-end="url(#blkArrow)"/>
+  <text x="167" y="106" font-size="8.5" fill="#000000" text-anchor="middle">1: RaycastPick(screenPos) → (lat, lon, height)</text>
+
+  <!-- 2. Display geocoded pin & open submission -->
+  <line x1="241" y1="130" x2="94" y2="130" stroke="#000000" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#blkArrowOpen)"/>
+  <text x="167" y="125" font-size="8.5" fill="#333333" text-anchor="middle">2: Display location badge &amp; photo form</text>
+
+  <!-- 3. Submit complaint -->
+  <line x1="94" y1="152" x2="403" y2="152" stroke="#000000" stroke-width="1.1" marker-end="url(#blkArrow)"/>
+  <text x="248" y="146" font-size="8.5" fill="#000000" text-anchor="middle">3: POST /complaints {image, coords, text, landmark}</text>
+
+  <!-- 4. Forward image to AI service -->
+  <line x1="411" y1="178" x2="561" y2="178" stroke="#000000" stroke-width="1.1" marker-end="url(#blkArrow)"/>
+  <text x="486" y="172" font-size="8.5" fill="#000000" text-anchor="middle">4: POST /predict {image_bytes}</text>
+
+  <!-- 5. Return classification & confidence -->
+  <line x1="561" y1="218" x2="411" y2="218" stroke="#000000" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#blkArrowOpen)"/>
+  <text x="486" y="212" font-size="8.5" fill="#000000" text-anchor="middle">5: {category: "ROADS", conf: 0.94, severity: 4}</text>
+
+  <!-- 6. Evaluate workload routing -->
+  <line x1="411" y1="240" x2="716" y2="240" stroke="#000000" stroke-width="1.1" marker-end="url(#blkArrow)"/>
+  <text x="563" y="234" font-size="8.5" fill="#000000" text-anchor="middle">6: RouteRequest(category, coords, severity, conf)</text>
+
+  <!-- 7. Return assigned department & operator -->
+  <line x1="716" y1="282" x2="411" y2="282" stroke="#000000" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#blkArrowOpen)"/>
+  <text x="563" y="276" font-size="8.5" fill="#000000" text-anchor="middle">7: Assigned {dept_id: 1, operator_id: 104, sla_hrs: 24}</text>
+
+  <!-- 8. Dispatch work order -->
+  <line x1="411" y1="305" x2="856" y2="305" stroke="#000000" stroke-width="1.1" marker-end="url(#blkArrow)"/>
+  <text x="633" y="299" font-size="8.5" fill="#000000" text-anchor="middle">8: DispatchWorkOrder(ticket_id, priority, location)</text>
+
+  <!-- 9. Real-time pin placement on 3D map -->
+  <line x1="403" y1="335" x2="249" y2="335" stroke="#000000" stroke-width="1.1" marker-end="url(#blkArrow)"/>
+  <text x="326" y="329" font-size="8.5" fill="#000000" text-anchor="middle">9: WebSocket: complaint_created(pin_3d, SLA_active)</text>
+
+  <!-- 10. Field resolution -->
+  <line x1="856" y1="375" x2="411" y2="375" stroke="#000000" stroke-width="1.1" marker-end="url(#blkArrow)"/>
+  <text x="633" y="369" font-size="8.5" fill="#000000" text-anchor="middle">10: PATCH /complaints/{id}/status {status: "RESOLVED"}</text>
+
+  <!-- 11. Closed-loop pin removal from 3D twin -->
+  <line x1="403" y1="410" x2="249" y2="410" stroke="#000000" stroke-width="1.1" marker-end="url(#blkArrow)"/>
+  <text x="326" y="404" font-size="8.5" fill="#000000" text-anchor="middle">11: WebSocket: complaint_resolved → Remove 3D Pin</text>
+
+  <!-- 12. Resolution confirmed to citizen -->
+  <line x1="403" y1="440" x2="94" y2="440" stroke="#000000" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#blkArrowOpen)"/>
+  <text x="248" y="434" font-size="8.5" fill="#333333" text-anchor="middle">12: Notification: Grievance successfully closed with verification</text>
+
+  <!-- Legend / Note footer -->
+  <g transform="translate(30, 480)">
+    <rect x="0" y="0" width="880" height="25" fill="#fafafa" stroke="#000000" stroke-width="0.8"/>
+    <text x="440" y="16" font-size="8.5" fill="#222222" text-anchor="middle">
+      Note: Solid arrows indicate synchronous / asynchronous invocations; dashed arrows indicate structured responses; all state transitions are logged with PostgreSQL ACID transactions.
+    </text>
+  </g>
+</svg>

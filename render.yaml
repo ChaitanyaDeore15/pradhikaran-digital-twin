@@ -1,0 +1,37 @@
+services:
+  # -------------------------------------------------------------
+  # Express Backend API Service on Render
+  # -------------------------------------------------------------
+  - type: web
+    name: pradhikaran-api
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm --workspace=apps/api run build
+    startCommand: npm --workspace=apps/api run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: POSTGIS_ENABLED
+        value: "false"
+      - key: CORS_ORIGIN
+        value: "*"
+      - key: AI_SERVICE_URL
+        fromService:
+          type: web
+          name: pradhikaran-ai
+          property: host
+
+  # -------------------------------------------------------------
+  # Python AI FastAPI Microservice on Render (Optional)
+  # -------------------------------------------------------------
+  - type: web
+    name: pradhikaran-ai
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: pip install -r services/ai/requirements.txt
+    startCommand: uvicorn services.ai.app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9

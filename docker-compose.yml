@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: pradhikaran_postgis
+    environment:
+      POSTGRES_DB: pradhikaran_twin
+      POSTGRES_USER: pradhikaran_user
+      POSTGRES_PASSWORD: pradhikaran_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgis_data:/var/lib/postgresql/data
+      - ./database/migrations:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pradhikaran_user -d pradhikaran_twin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ai-service:
+    build:
+      context: ./services/ai
+      dockerfile: Dockerfile
+    container_name: pradhikaran_ai_service
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: ./apps/api/Dockerfile
+    container_name: pradhikaran_api
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - POSTGIS_ENABLED=true
+      - DATABASE_URL=postgres://pradhikaran_user:pradhikaran_pass@db:5432/pradhikaran_twin
+      - AI_SERVICE_URL=http://ai-service:8000
+      - CORS_ORIGIN=http://localhost:5173
+    depends_on:
+      db:
+        condition: service_healthy
+      ai-service:
+        condition: service_started
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile
+    container_name: pradhikaran_web
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:3001/api/v1
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  postgis_data:

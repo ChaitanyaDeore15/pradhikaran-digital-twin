@@ -1,0 +1,32 @@
+# Node
+node_modules/
+dist/
+build/
+apps/web/dist/
+apps/api/dist/
+.sf/
+*.log
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+*.egg-info/
+
+# Environment & Credentials
+.env
+.env.local
+.env.*.local
+*.pem
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cesium local cache
+public/cesium/

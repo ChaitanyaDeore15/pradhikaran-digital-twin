@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Cesium Widget UI tweaks */
+.cesium-viewer-bottom {
+  display: block !important;
+  opacity: 0.85;
+}
+.cesium-viewer-toolbar {
+  top: 12px !important;
+  right: 12px !important;
+}
+.cesium-credit-logoContainer, .cesium-credit-textContainer {
+  font-size: 11px !important;
+}
