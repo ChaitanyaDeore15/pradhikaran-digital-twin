@@ -13,6 +13,8 @@
  * - Normalized Difference Green Index (NDGI) (Fallen trees / Overgrown vegetation -> dept-parks)
  */
 
+import { Buffer } from 'node:buffer';
+
 export interface VisualFeatureVector {
   surfaceRoughness: number;    // High-frequency edge gradient variance (0 - 100)
   specularWaterIndex: number;  // Specular reflectance ratio (0 - 100)
